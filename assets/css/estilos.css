@@ -1,0 +1,53 @@
+:root {
+    --bg-color: #D89455; /*es el color del fondo*/
+    --menu: #E5C290;
+
+    --sombra: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+}
+
+.cont {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+h1 {
+    text-shadow: 0 4.5px 3.5px var(--sombra);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.cont > .tapa {
+    background: #D4A359;
+    height: inherit;
+    width: 100%;
+    box-shadow: 0 0 40px var(--sombra);
+    position: relative;
+}
+
+.cont > .tapa > .inter {
+    /* background-color: #E9C282; */
+    position: relative;
+    place-items: center;
+    height: inherit;
+    width: 90%;
+}
+
+.inter a {
+    text-decoration: none;
+}
+
+/* .lado1 a {
+    text-decoration: none;
+    display: block;
+} */  
