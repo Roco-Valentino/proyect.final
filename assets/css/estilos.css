@@ -3,6 +3,7 @@
   --shadow: rgba(0, 0, 0, 0.2);
   --bar: #ed2100;
   --boton-bar: rgb(219, 7, 7); 
+  --details: #0A0703;
 }
 
 body {
@@ -49,6 +50,11 @@ nav a.reservar {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.info {
+  display: inline-flex;
+  
 }
 
 .menu_title {
