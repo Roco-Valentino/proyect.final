@@ -1,4 +1,56 @@
 :root {
-    --bg-color: #FDBF0F;
-    -shadow: rgba(0, 0, 0, 0.2);
+  --bg-color: #eedeb6;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --bar: #ed2100;
+  --boton-bar: rgb(219, 7, 7); 
+}
+
+body {
+  background: var(--bg-color);
+}
+
+header {
+  background: var(--bar);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+  background: var(--boton-bar);
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+nav a.reservar {
+  background:var(--boton-bar);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.agr {
+  display: flex;
+}
+
+.menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu_title {
+  font-size: 20px;
 }
