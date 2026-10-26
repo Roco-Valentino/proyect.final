@@ -1,80 +1,56 @@
 :root {
-    --bg-color: #D28B28; /*es el color del fondo*/
-    --menu: #E5C290;
-
-    --sombra: rgba(0, 0, 0, 0.2);
+  --bg-color: #eedeb6;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --bar: #ed2100;
+  --boton-bar: rgb(219, 7, 7); 
 }
 
 body {
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* min-height: 100vh; */
+  background: var(--bg-color);
 }
 
-.cont {
-    height: 140vh;
-    display: block;
-    place-items: center;
-    width: 100%;
+header {
+  background: var(--bar);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
 }
 
-h1, .ref{
-    text-shadow: 0 4.5px 3.5px var(--sombra);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 9vh;
-    margin: 1em;
-    padding: 0;
+header h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-.ref {
-    font-size: 5vh;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+  background: var(--boton-bar);
+  padding: 8px 14px;
+  border-radius: 20px;
 }
 
-.tapa {
-    background-color: white;
-    width: 100vh;
-    height: 92vh;
-    display: flex;
+nav a.reservar {
+  background:var(--boton-bar);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
 }
 
-.inter {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    text-align: center;
+.agr {
+  display: flex;
 }
 
-.inter a {
-    text-decoration: none;
-    margin: 4em;
-    display: grid;
-    font-family: fantasy;
-    font-size: 3vh;
-    border: dashed ;
+.menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* .cont > .tapa {
-    background: #D4A359;
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 0 40px var(--sombra);
-    position: relative;
-    align-content: center;
+.menu_title {
+  font-size: 20px;
 }
-
-.cont > .tapa > .inter {
-    position: relative;
-    height: inherit;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: black;
-} */
-
-/* .lado1 a {
-    text-decoration: none;
-    display: block;
-} */  
