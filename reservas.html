@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservas | Las Wachinesas</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#141414; --rojo:#D7261E; --naranja:#F26B1D; --amarillo:#FFC72C; --blanco:#FFFFFF; --gris:#F4F4F2;
+  --fuente:"Archivo","Segoe UI",Arial,sans-serif;
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="cab">
+    <a href="barra del inicio.htmls">Volver al inicio</a>
+    <h1>reserva tu mesa</h1>
+    <p>Completa los datos y te armamos el mensaje para mandarnos por WhatsApp.</p>
+  </div>
+</header>
+
+<main>
+<form id="form" novalidate>
+
+ <fieldset>
+    <legend>¿Que queres reservar?</legend>
+    <div class="tipos">
+      <div><input type="radio" name="tipo" id="t-mesa" value="Mesa comun" checked><label for="t-mesa">Mesa común</label></div>
+    </div>
+
+  <div class="fila">
+    <div class="grupo">
+      <label class="campo" for="nombre">Tu nombre</label>
+      <input type="text" id="nombre" autocomplete="name" required>
+    </div>
+    <div class="grupo">
+      <label class="campo" for="telefono">Tu telefono</label>
+      <input type="tel" id="telefono" autocomplete="tel" placeholder="299 123 4567" required>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div class="grupo">
+      <label class="campo" for="fecha">Fecha</label>
+      <input type="date" id="fecha" required>
+    </div>
+    <div class="grupo">
+      <label class="campo" for="hora">Hora</label>
+      <input type="time" id="hora" required>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <label class="campo" for="personas">Cantidad de personas</label>
+    <input type="number" id="personas" min="1" max="40" value="2" required>
+  </div>
+  <div class="grupo">
+    <label class="campo" for="aclaraciones">Aclaraciones (opcional)</label>
+    <textarea id="aclaraciones" placeholder="Alergias, sillas para chicos, mesa tranquila…"></textarea>
+  </div>
+ </fieldset>
+
+  <div class="error" id="error" role="alert"></div>
+  <p class="nota">La reserva queda confirmada cuando te respondamos por WhatsApp.</p>
+</form>
+</main>
+</body>
+</html>
