@@ -2,7 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="assets/css/estilos.css">
+    <script src="assets/JavaScript/funciones.js" defer></script>
 
     <title>Document</title>
 </head>
@@ -10,11 +12,20 @@
     <div class="cont">
         <header>
             <h1 class="titulo" id="title">Wachinesas</h1>
-            <nav>
+            <button class="hamb"
+            id="botonMenu"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="navegacion"
+            >
+            &#9776;
+            </button>
+            <nav id="navegacion">
                 <a href="complementos/menu.html">Men&#250;</a>
                 <a href="#">Reservas</a>
                 <a href="#">Reserva de Cumplea&ntilde;os</a>
                 <a href="#">Pedidos a Domicilio</a>
+                <a href="complementos/club.html">Club</a>
             </nav>
         </header>
         <div class="info">
