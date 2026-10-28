@@ -8,16 +8,72 @@
 
 body {
   background: var(--bg-color);
+  margin: 0;
+  padding: 0;
 }
 
 header {
   background: var(--bar);
-  color: white;
+  color: whitesmoke;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/*Es la capa que envuelve el carrusel*/
+.carusel {
+  margin: 50px auto 0;
+  width: 600px;
+  height: auto;
+  overflow:hidden;
+}
+
+.carusel ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 20s infinite alternate ease-in-out;
+}
+
+/*Son todas las imagenes del carrusel. Estas tienen que ser 720x480 pixeles*/
+.carusel li{
+  width: 100%;
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+/*Tamaño de la imagen*/
+.carusel img {
+  width: 100%;
+}
+
+/*Animación del carrusel*/
+@keyframes slide {
+  0% { margin-left: 0;}
+  20% { margin-left: 0;}
+  
+  25% { margin-left: -100%;}
+  40% { margin-left: -100%;}
+
+  50% { margin-left: -200%;}
+  70% { margin-left: -200%;}
+
+  75% { margin-left: -300%;}
+  100% { margin-left: -300%;}
+
+}
+
+/*Configuración para que queden bien las imagenes*/
+@media(max-width:991px) {
+  .carusel{
+    width: 340px;
+    padding: 0px;
+  }
 }
 
 header h1 {
