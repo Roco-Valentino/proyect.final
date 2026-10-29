@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,55 +6,47 @@
     <link rel="stylesheet" href="assets/css/estilos.css">
     <script src="assets/js/funciones.js" defer></script>
 
-    <title>Document</title>
+    <title>Wachinesas | Restaurant</title>
 </head>
 <body>
     <div class="cont">
         <header>
-            <h1 class="titulo" id="title">Wachinesas</h1>
+            <h1 id="title">Wachinesas</h1>
             <button class="hamb"
-            id="botonMenu"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-            aria-controls="navegacion"
+               id="botonMenu"
+               aria-label="Abrir menú"
+               aria-expanded="false"
+               aria-controls="navegacion"
             >
-            &#9776;
+               &#9776;
             </button>
             <nav id="navegacion">
-                <a href="complementos/menu.html">Men&#250;</a>
-                <a href="complementos/reservas.html">Reservas</a>
-                <a href="#">Reserva de Cumplea&ntilde;os</a>
-                <a href="#">Pedidos a Domicilio</a>
-                <a href="complementos/club.html">Club</a>
+               <a href="html/menu.html">Men&#250;</a>
+               <a href="html/reservas.html">Reservas</a>
+               <a href="#">Reserva de Cumplea&ntilde;os</a>
+               <a href="#">Pedidos a Domicilio</a>
+               <a href="html/club.html">Club</a>
             </nav>
         </header>
         <main>
             <div class="info">
                 <div class="text">
-                    <h1 id="title" data-text="Wachinesas">Wachinesas</h1>
-                    <p class="slogan">Donde tu Wacho paga las milanesas</p>
+                  <h1 id="title" data-text="Wachinesas">Wachinesas</h1>
+                  <p class="slogan">Donde tu Wacho paga las milanesas</p>
                 </div>
                 <div class="carusel" id="milas">
                     <!--Las imagenes tienen que ser de 720 x 480px-->
                     <ul>
-                        <li>
-                            <img src="assets/img/mila4.jpg" alt="mila4">
-                        </li>
-                        <li>
-                            <img src="assets/img/mila3.jpeg" alt="mila3">
-                        </li>
-                        <li>
-                            <img src="assets/img/mila2.jpeg" alt="mila2">
-                        </li>
-                        <li>
-                            <img src="assets/img/mila1.jpeg" alt="mila1">
-                        </li>
+                        <li><img src="assets/images/mila4.jpg" alt="Mila Napolitana"></li>
+                        <li><img src="assets/images/mila3.jpeg" alt="Mila a Caballo con Guarnici&#243;n"></li>
+                        <li><img src="assets/images/mila2.jpeg" alt="Mila Napolitana con Guarnici&#243;n"></li>
+                        <li><img src="assets/images/mila1.jpeg" alt="Mila Bajon"></li>
                     </ul>
                 </div>
             </div>
-            <hr/>
+            <hr class="sep"/>
             <div class="agr">
-                <div class="menu" id="bottom">
+                <div class="menu">
                     <h2 class="menu_title">Men&#250;</h2>
                     <ul>
                         <li><a href="#">Especialidad</a></li>
@@ -64,8 +56,9 @@
                         <li><a href="#">Bebidas</a></li>
                     </ul>
                 </div>
-                <div class="mapa" id="map">
-                    
+                <div class="map">
+                     <h3 class="map_title">Encontranos Ac&#225;!</h3>
+                    <iframe id="google_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.2130657667276!2d-68.08789890000003!3d-38.96480259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3253366ebbab%3A0xd008109730718bd2!2zTGFuw61uIDIwMjAsIFE4MzAwIE5ldXF1w6lu!5e0!3m2!1ses-419!2sar!4v1793314405991!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </main>

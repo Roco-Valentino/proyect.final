@@ -1,9 +1,10 @@
 :root {
-  --bg-color: #eedeb6;
+  --bg-color: #B80000; /*#eedeb6; */
   --shadow: rgba(0, 0, 0, 0.2);
-  --bar: #ed2100;
-  --boton-bar: rgb(219, 7, 7); 
-  --details: #0A0703;
+  --bar: #0A0703; /*#ed2100*/
+  --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
+  --details:#FFA42D; /*#0A0703*/
+  --font: fira code, ;
 }
 
 html {
@@ -19,13 +20,9 @@ body {
   background: var(--bg-color);
 }
 
-.cont {
-	align-content: center;
-}
-
 header {
   background: var(--bar);
-  color: whitesmoke;
+  color: var(--details);
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -35,58 +32,113 @@ header {
   gap: 20px;
 }
 
-/*Es la capa que envuelve el carrusel*/
-.carusel {
-  margin: 50px auto 0;
-  width: 510px;
-  height: auto;
-  overflow:hidden;
-  position: absolute;
-  right: 9%;
-  border-radius: 7px;
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: min(1100px, 80%);
+  margin: 50px auto;
+  box-sizing: border-box;
 }
 
+.info .text {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.info .text h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  overflow-wrap: anywhere;
+}
+
+.info .slogan {
+  font-family: var(--font);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--details);
+  margin-top: 20px;
+}
+
+/* Contenedor del carrusel */
+.carusel {
+  flex: 0 1 510px;
+  width: 100%;
+  max-width: 510px;
+  min-width: 0;
+  height: auto;
+  right: -13%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 7px;
+  aspect-ratio: 3 / 2;
+  border: var(--details) 4px solid;
+}
+
+/* Lista que contiene las cuatro imágenes */
 .carusel ul {
   display: flex;
-  padding: 0;
   width: 400%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   animation: slide 20s infinite alternate ease-in-out;
 }
 
-/*Son todas las imagenes del carrusel. Estas tienen que ser 720x480 pixeles*/
-.carusel li{
-  width: 100%;
+/* Las imagenes, cada una de estas debe tener un tamaño de 720x480px */
+.carusel li {
+  flex: 0 0 25%;
+  width: 25%;
+  height: 100%;
+  min-width: 0;
   list-style: none;
-  position: relative;
 }
 
-/*Tamaño de la imagen*/
+/* Imagen 720x480 */
 .carusel img {
+  display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/*Animación del carrusel*/
+/* Animación */
 @keyframes slide {
-  0% { margin-left: 0;}
-  20% { margin-left: 0;}
-  
-  25% { margin-left: -100%;}
-  40% { margin-left: -100%;}
+  0%, 20% {
+      margin-left: 0;
+  }
 
-  50% { margin-left: -200%;}
-  70% { margin-left: -200%;}
+  25%, 40% {
+      margin-left: -100%;
+  }
 
-  75% { margin-left: -300%;}
-  100% { margin-left: -300%;}
+  50%, 70% {
+      margin-left: -200%;
+  }
 
+  75%, 100% {
+      margin-left: -300%;
+  }
 }
 
-/*Configuración para que queden bien las imagenes*/
-@media(max-width:991px) {
-  .carusel{
-    width: 340px;
-    padding: 0px;
-    right: 3.5%;
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+    margin: 30px auto;
+  }
+
+  .carusel {
+    flex: none;
+    width: 100%;
+    max-width: 510px;
+    margin-inline: auto;
+    box-shadow: 0 0 20px var(--shadow);
+    border: var(--details) 3px solid;
   }
 }
 
@@ -96,39 +148,13 @@ header h1 {
 }
 
 nav a {
-  color: white;
+  color: var(--details);
   text-decoration: none;
   margin-left: 15px;
   font-weight: bold;
   background: var(--boton-bar);
   padding: 8px 14px;
   border-radius: 20px;
-}
-
-nav a.reservar {
-  background:var(--boton-bar);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 20px;
-}
-
-.agr {
-  display: flex;
-}
-
-.menu ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.info {
-  display: inline-flex;
-  
-}
-
-.menu_title {
-	font-size: 20px;
 }
 
 /*Menú hamburguesa cuando la pantalla es chica*/
@@ -152,10 +178,11 @@ nav a {
 	background: var(--boton-bar);
 	border-radius: 12px;
 	padding: 0.15em;
-	color: white;
+	color: var(--details);
 	cursor: pointer;
 }
 
+/*Ajuste para el Menú hamburguesa*/
 @media(max-width: 768px) {
 	header {
 		position: relative;
@@ -186,16 +213,38 @@ nav a {
 	}	
 }
 
-hr {
-	border: var(--bar) dashed; 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: block;
-	margin: 6em auto;
+.agr {
+  display: flex;
 }
 
-.menu a{
-	font-style:none ;
+.menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info , .agr{
+  display: inline-flex;
+}
+
+.info .text h1 , .agr h2, .agr h3 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-family: var(--font);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--bar);
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
+  letter-spacing: -1.5px;
+}
+
+.sep {
+	width: min(80%, 80%);
+  margin: 40px auto;
+  border: 3px solid var(--details);
+  box-shadow: 0 0 20px var(--shadow);
+  border-radius: 10px;
+}
+
+ul a{
+	font-style: none;
 }
