@@ -1,10 +1,11 @@
 :root {
   --bg-color: #B80000; /*#eedeb6; */
-  --shadow: rgba(0, 0, 0, 0.2);
   --bar: #0A0703; /*#ed2100*/
   --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
-  --details:#FFA42D; /*#0A0703*/
-  --font: fira code, ;
+  --details:#F7A93B; /*#0A0703*/
+  --font: 'Lilita One', sans-serif;
+  -webkit-text-stroke: 3px #111;   /* contorno negro */
+  paint-order: stroke fill;  /* el contorno queda por detrás del relleno */
 }
 
 html {
@@ -49,6 +50,7 @@ header {
 }
 
 .info .text h1 {
+  font-family: var(--font);
   font-size: clamp(2.5rem, 5vw, 5rem);
   overflow-wrap: anywhere;
 }
@@ -68,7 +70,7 @@ header {
   max-width: 510px;
   min-width: 0;
   height: auto;
-  right: -13%;
+  right: -20%;
   overflow: hidden;
   position: relative;
   border-radius: 7px;
@@ -226,8 +228,7 @@ nav a {
 .info , .agr{
   display: inline-flex;
 }
-
-.info .text h1 , .agr h2, .agr h3 {
+.agr h2, .agr h3 {
   font-size: clamp(2.5rem, 5vw, 5rem);
   font-family: var(--font);
   font-weight: 900;
@@ -235,8 +236,26 @@ nav a {
   color: var(--bar);
   text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
   letter-spacing: -1.5px;
+  color: var(--details);              /* naranja #F7A93B */
+  -webkit-text-stroke: 3px #111;      /* contorno negro */
+  paint-order: stroke fill;
+  text-shadow: 3px 4px 0 #111;
+  overflow-wrap: anywhere;
 }
 
+.info .text h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-family: var(--font);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--details);              /* naranja #F7A93B */
+  -webkit-text-stroke: 3px #111;      /* contorno negro */
+  paint-order: stroke fill;
+  text-shadow: 3px 4px 0 #111;
+  overflow-wrap: anywhere;
+}
 .sep {
 	width: min(80%, 80%);
   margin: 40px auto;
