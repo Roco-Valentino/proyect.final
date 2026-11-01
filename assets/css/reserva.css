@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #B80000;
+  --bg-others: #FFDF74;
+  --bar: #0A0703; /*#ed2100*/
+  --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
+  --details:#ffa42d; /*#0A0703*/
+  --font: 'Lilita One', sans-serif;
+  /* -webkit-text-stroke: 3px #111;    contorno negro 
+  paint-order: stroke fill;  el contorno que esta por detrás del relleno */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+header {
+  background: var(--bar);
+  color: var(--details);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px var(--details) solid;
+  /* border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; */
+  gap: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav a {
+  color: var(--details);
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+  background: var(--boton-bar);
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+/*Menú hamburguesa cuando la pantalla es chica*/
+header nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+nav a {
+	margin-left: 0;
+   white-space: nowrap;
+}
+
+.hamb {
+	display: none;
+	border: none;
+	font-size: 30px;
+	background: var(--boton-bar);
+	border-radius: 12px;
+	padding: 0.15em;
+	color: var(--details);
+	cursor: pointer;
+}
+
+/*Ajuste para el Menú hamburguesa*/
+@media(max-width: 768px) {
+	header {
+		position: relative;
+		flex-wrap: wrap;
+		padding: 15px 20px;
+	}
+
+	.hamb {
+		display: block;
+	}
+
+	header nav {
+		display: none;
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		gap: 10px;
+	}
+
+	header nav.activo {
+		display: flex;
+	}
+
+	header nav a {
+		box-sizing: border-box;
+		width: 100%;
+		text-align: center;
+	}	
+}
+/*==================================== Finalización del header ====================================*/

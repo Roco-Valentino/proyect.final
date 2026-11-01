@@ -5,56 +5,63 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Reservas | Las Wachinesas</title>
    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&display=swap" rel="stylesheet"/>
+   <link rel="stylesheet" href="../assets/css/reserva.css">
+   <script src="../assets/js/funciones.js" defer></script>
 </head>
 <body>
-<header>
-  <div class="cab">
-    <a href="barra del inicio.htmls">Volver al inicio</a>
-    <h1>reserva tu mesa</h1>
-    <p>Completa los datos y te armamos el mensaje para mandarnos por WhatsApp.</p>
-  </div>
-</header>
+  <header>
+      <h1 id="title">Wachinesas</h1>
+      <button class="hamb"
+         id="botonMenu"
+         aria-label="Abrir menú"
+         aria-expanded="false"
+         aria-controls="navegacion"
+      >
+         &#9776;
+      </button>
+      <nav id="navegacion">
+         <a href="../index.html">Home</a>
+         <a href="menu.html">Men&#250;</a>
+         <a href="#">Reserva de Cumplea&ntilde;os</a>
+         <a href="#">Pedidos a Domicilio</a>
+         <a href="html/club.html">Club</a>
+      </nav>
+   </header>
 
-<main>
-<form id="form" novalidate>
+   <main>
+      <form id="form" novalidate>
 
- <fieldset>
-    <legend>¿Que queres reservar?</legend>
-    <div class="tipos">
-      <div><input type="radio" name="tipo" id="t-mesa" value="Mesa comun" checked><label for="t-mesa">Mesa común</label></div>
-    </div>
+      <fieldset>
+         <div class="fila">
+            <div class="grupo">
+            <label class="campo" for="nombre">Su nombre</label><br/>
+            <input type="text" id="nombre" autocomplete="name" required>
+            </div>
+            <div class="grupo">
+            <label class="campo" for="telefono">Su n&#250;mero de telefono</label><br/>
+            <input type="tel" id="telefono" autocomplete="tel" placeholder="299 123 4567" required>
+            </div>
+         </div>
 
-  <div class="fila">
-    <div class="grupo">
-      <label class="campo" for="nombre">Tu nombre</label>
-      <input type="text" id="nombre" autocomplete="name" required>
-    </div>
-    <div class="grupo">
-      <label class="campo" for="telefono">Tu telefono</label>
-      <input type="tel" id="telefono" autocomplete="tel" placeholder="299 123 4567" required>
-    </div>
-  </div>
-
-  <div class="fila">
-    <div class="grupo">
-      <label class="campo" for="fecha">Fecha</label>
-      <input type="date" id="fecha" required>
-    </div>
-    <div class="grupo">
-      <label class="campo" for="hora">Hora</label>
-      <input type="time" id="hora" required>
-    </div>
-  </div>
-
-  <div class="grupo">
-      <label class="campo" for="personas">Cantidad de personas</label>
-      <input type="number" id="personas" min="1" max="40" value="2" required>
-  </div>
- </fieldset>
-
-  <div class="error" id="error" role="alert"></div>
-  <p class="nota">La reserva queda confirmada cuando te respondamos por WhatsApp.</p>
-</form>
-</main>
+         <div class="fila">
+            <div class="grupo">
+               <label class="campo" for="fecha">Fecha</label><br/>
+               <input type="date" id="fecha" required>
+            </div>
+            <div class="grupo">
+               <label class="campo" for="hora">Hora</label><br/>
+               <input type="time" id="hora" required>
+            </div>
+         </div>
+         <div class="grupo">
+            <label class="campo" for="personas">Cantidad de personas</label><br/>
+            <input type="number" id="personas" min="1" max="20" value="2" required>
+         </div>
+         </fieldset>
+         <div class="error" id="error" role="alert"></div>
+         <input type="submit" value="Enviar"/>
+         <input type="reset" value="Cancelar" id="cancel"/>
+      </form>
+   </main>
 </body>
 </html>
