@@ -35,9 +35,18 @@ header {
   gap: 20px;
 }
 
-header h1 {
+header a p {
   margin: 0;
-  font-size: 24px;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  color: var(--details);
+  text-autospace: -1.5px;
+  align-items: center;
+  font-weight: bolder;
+  gap: 20px;
+}
+
+header a{
+  text-decoration: none;
 }
 
 nav a {
@@ -342,16 +351,39 @@ Contenedor del carrusel */
    border-radius: 10px;
 }
 
-
 /*==================================== Footer ====================================*/
 
 footer {
-  background: var(--bg-color);
+	background: var(--bg-color);
+	color: var(--bar);
+	border-top: 5px var(--details) solid;
+	padding: 15px 30px;
+	text-align: center;
+	margin-top: -1%;
+	height: auto;
+	gap: 20px;
+}
+#us p {
+	font-size: clamp(2.5rem, 4vw, 4rem);
+  font-family: var(--font);
+  font-weight: 900;
+  line-height: 1.05;
   color: var(--bar);
-  border-top: 5px var(--details) solid;
-  padding: 15px 30px;
-  text-align: center;
-  margin-top: -1%;
-  height: auto;
-  gap: 20px;
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
+  letter-spacing: -1.5px;
+  color: var(--details);              /* naranja #F7A93B */
+  -webkit-text-stroke: 3px #111;      /* contorno negro */
+  paint-order: stroke fill;
+  text-shadow: 3px 4px 0 #111;
+  overflow-wrap: anywhere;
+  margin: 8px;
+
+}
+
+footer a {
+	text-decoration: none;	
+}
+
+footer #us:hover{
+	text-decoration:underline var(--details) 4px;
 }
