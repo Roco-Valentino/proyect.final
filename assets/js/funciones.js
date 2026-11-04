@@ -1,6 +1,7 @@
 const botonMenu = document.getElementById("botonMenu");
 const navegacion = document.getElementById("navegacion");
 
+//Interacción del Menú hamburguesa
 botonMenu.addEventListener("click", () => {
     const abierto = navegacion.classList.toggle("activo");
 
