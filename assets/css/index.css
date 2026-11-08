@@ -2,6 +2,7 @@
   align-content: center;
 }
 
+/*Info es todo el apartado superior de el titulo con el refran y las imagenes*/
 .info {
   display: flex;
   align-items: center;
@@ -18,6 +19,7 @@
   text-align: center;
 }
 
+/*Titulos de la página*/
 .info .text h1 , .agr h2, .agr h3 {
   font-size: clamp(2.5rem, 5vw, 5rem);
   font-family: var(--font);
@@ -87,7 +89,7 @@ Contenedor del carrusel */
   object-fit: cover;
 }
 
-/* Animación */
+/* Animación del carrusel*/
 @keyframes slide {
   0%, 20% {
       margin-left: 0;
@@ -128,6 +130,7 @@ Contenedor del carrusel */
 
 /*==================================== Separación ====================================*/
 
+/*agr es toda la parte un poco más extra e inferior de la página, siendo la ubicación y el otro menú*/
 .agr {
   padding: 2em;
   margin: 0;
