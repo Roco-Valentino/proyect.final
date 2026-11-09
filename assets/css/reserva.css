@@ -4,7 +4,7 @@
   --bar: #0A0703; /*#ed2100*/
   --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
   --details:#ffa42d; /*#0A0703*/
-  --font: 'Lilita One', sans-serif;
+  --font: 'work sans', sans-serif;
   /* -webkit-text-stroke: 3px #111;    contorno negro 
   paint-order: stroke fill;  el contorno que esta por detrás del relleno */
 }
@@ -20,24 +20,32 @@ html {
 
 body {
   background: var(--bg-color);
+  font-family: var(--font);
+  color: #ffdc78;
 }
 
 header {
   background: var(--bar);
   color: var(--details);
-  padding: 15px 30px;
+  padding: 30px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 5px var(--details) solid;
   /* border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px; */
   gap: 20px;
 }
 
+.hero {
+  padding: 220px 8%;
+  background: var(--bg-color);
+  border-bottom: 4px solid #0A0703;
+  
+}
+
 header a p {
   margin: 0;
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: 24pt;
   color: var(--details);
   align-items: center;
   /* border-bottom-right-radius: 10px;
@@ -50,12 +58,12 @@ header a{
 }
 
 nav a {
-  color: var(--details);
+  color: #ffffff;
   text-decoration: none;
   margin-left: 15px;
-  font-weight: bold;
+  font-weight: ;
   background: var(--boton-bar);
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 20px;
 }
 
@@ -83,6 +91,49 @@ nav a {
 	color: var(--details);
 	cursor: pointer;
 }
+
+.Titulo_subtitulo1 {
+  font-family: 'lilita one', sans-serif;
+}
+
+.fuente1 {
+  font-family: 'work sans', sans-serif;
+  font-size: 16pt;
+  color: #ffdc78;
+}
+
+.fuente2 {
+  font-family: 'work sans', sans-serif;
+  font-size: 9.8pt;
+  color: #ffdc78;
+}
+
+.reserva-layout {
+  color:#ff9100;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  padding: 60px 8%;
+  background: #ffdf74;
+
+}
+
+.card-form,
+.card-resumen {
+  background:#0A0703;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.card-form {
+  background: #fff8E7;
+}
+
+.card-resumen {
+  background: #b80000;
+  color: #ffdf74;
+}
+
 
 /*Ajuste para el Menú hamburguesa*/
 @media(max-width: 768px) {
@@ -114,3 +165,4 @@ nav a {
 		text-align: center;
 	}	
 }
+
