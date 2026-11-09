@@ -3,23 +3,12 @@
   --bg-others: #FFDF74;
   --bar: #0A0703; /*#ed2100*/
   --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
-  --details:#ffa42d; /*#0A0703*/
-  --font: 'Lilita One', sans-serif;
-  /* -webkit-text-stroke: 3px #111;    contorno negro 
-  paint-order: stroke fill;  el contorno que esta por detrás del relleno */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--bg-color);
+  --details:#ffa42d;
+  --line: #d8bc61; /*#0A0703*/
+  --font-title: 'Lilita One', sans-serif;
+  --font-subtitle: 'Montserrat Alternates', sans-serif;
+  --font-text: 'Nunito', sans-serif;
+  /*paint-order: stroke fill;  el contorno que esta por detrás del relleno */
 }
 
 header {
@@ -35,14 +24,14 @@ header {
   gap: 20px;
 }
 
-/*Logo Wachinesas*/
+/*Titulo Wachinesas*/
 header a p {
   margin: 0;
+  font-family: var(--font-title);
   font-size: clamp(1.5rem, 3vw, 3rem);
   color: var(--details);
   text-autospace: -1.5px;
   align-items: center;
-  font-weight: bolder;
   gap: 20px;
 }
 
@@ -53,11 +42,17 @@ header a{
 nav a {
   color: var(--details);
   text-decoration: none;
-  margin-left: 15px;
   font-weight: bold;
   background: var(--boton-bar);
   padding: 8px 14px;
   border-radius: 20px;
+  transition: all 0.4s;
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+nav a:hover {
+   transform: scale(1.1);
 }
 
 /*Menú hamburguesa cuando la pantalla es chica*/
@@ -69,16 +64,12 @@ header nav {
 	gap: 10px;
 }
 
-nav a {
-	margin-left: 0;
-   white-space: nowrap;
-}
-
 .hamb {
 	display: none;
 	border: none;
-	font-size: clamp(0.5rem, 5vw, 2rem);
+	font-size: 30px;
 	background: var(--boton-bar);
+   font-family: var(--font-text);
 	border-radius: 12px;
 	padding: 0.15em;
 	color: var(--details);
@@ -109,17 +100,33 @@ nav a {
 		display: flex;
 	}
 
-	header nav a {
+	nav a {
 		box-sizing: border-box;
 		width: 100%;
 		text-align: center;
-	}	
+	}
+   
+   nav a:hover {
+      transform: scale(1.05);
+   }
 }
 /*==================================== Finalización del header ====================================*/
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
-   padding: 0;
-   margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+button, .inc, .hamb {
+  font-family: var(--font-text);
 }
 
 /*==================================== Footer ====================================*/
@@ -131,43 +138,57 @@ footer {
 	padding: 15px 30px;
 	text-align: center;
 	margin-top: -1%;
-	height: auto;
 	gap: 20px;
 }
+
 #us p {
 	font-size: clamp(2.5rem, 4vw, 4rem);
-   font-family: var(--font);
-   font-weight: 900;
-   line-height: 1.05;
-   color: var(--bar);
-   text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
-   letter-spacing: -1.5px;
-   color: var(--details);              /* naranja #F7A93B */
-   -webkit-text-stroke: 3px #111;      /* contorno negro */
-   paint-order: stroke fill;
-   text-shadow: 3px 4px 0 #111;
-   overflow-wrap: anywhere;
-   margin: 8px;
+  font-family: var(--font-subtitle);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--bar);
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
+  letter-spacing: -1.5px;
+  color: var(--details);              /* naranja #F7A93B */
+  -webkit-text-stroke: 3px #111;      /* contorno negro */
+  paint-order: stroke fill;
+  text-shadow: 3px 4px 0 #111;
+  overflow-wrap: anywhere;
+  margin: 8px;
 }
 
-footer a {
-	text-decoration: none;	
+.text a {
+	text-decoration: none;
+   color: #080814;
 }
 
 #us {
    position: relative;
+   display: inline-block;
+   text-decoration: none;
+   margin: 2px;
 }
 
-footer #us:before{
-	width: 0%;
-   content: '';
-   overflow: hidden;
-   transition: 1s ease-in-out;
-   height: 100%;
-   position:absolute;
-   text-decoration:underline var(--details) 4px;
+
+#us::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 3px;
+   width: 100%;
+   height: 4px;
+   background-color: var(--details);
+   box-shadow: 2px 3px 0 #111;
+
+   transform: scaleX(0);
+   transform-origin: center;
+   transition: transform 0.4s ease;
 }
 
-#us:hover::before {
-   width:100%;
+#us:hover::after {
+   transform: scaleX(1);
+}
+
+.text {
+   font-family: var(--font-text);
 }

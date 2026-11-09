@@ -1,4 +1,4 @@
 # proyect.final
-ola si
-aver si anda..
-## soy roco jajaja que bonito soy jiji jujuj jojoj
+8/11
+
+Animación sobre los hover, creación del Menú y cambios en el index

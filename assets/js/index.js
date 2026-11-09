@@ -6,8 +6,8 @@ botonMenu.addEventListener("click", () => {
     const abierto = navegacion.classList.toggle("activo");
 
     botonMenu.setAttribute(
-        "aria-expanded", 
-        abierto
+      "aria-expanded", 
+      abierto
     );
     botonMenu.setAttribute(
         "aria-label",
