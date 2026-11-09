@@ -6,6 +6,7 @@
    <title>Reservas | Las Wachinesas</title>
    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&display=swap" rel="stylesheet"/>
    <link rel="stylesheet" href="../assets/css/reserva.css">
+   <link rel="stylesheet" href="../assets/css/estilos.css">
    <script src="../assets/js/funciones.js" defer></script>
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,7 @@
 <body>
   <header>
       <a href="../index.html" id="logo">
+         <p id="title">Wachinesas</p>
          <p class="Titulo_subtitulo1"><strong>WACHINESAS</strong></p>
          <p class="fuente2">Donde tu wacho paga las milanesas</p>
       </a>
@@ -33,22 +35,23 @@
          <a href="club.html">Club</a>
       </nav>
    </header>
+   <main>
+      <form id="form" novalidate>
 
-   <section class="hero">
-      <div>asas</div>
-   </section>
-
-<<<<<<< HEAD
-   <section class="reserva-layout">
-      <div class="card-form">asdasdasdasdasd111</div>
-      <aside class="card-resumen">asasdasassasa222</aside>
-   </section>
-
-   <section>
-      
-   </section>
-         
-=======
+      <fieldset>
+         <div class="fila">
+            <div class="grupo">
+            <label class="campo" for="nombre">Su nombre</label><br/>
+            <input type="text" id="nombre" autocomplete="name" required>
+            </div>
+            <div class="grupo">
+            <label class="campo" for="telefono">Su n&#250;mero de telefono</label><br/>
+            <input type="tel" id="telefono" autocomplete="tel" placeholder="299 123 4567" required>
+            </div>
+         </div>
+      <section class="hero">
+         <div>asas</div>
+      </section>
          <div class="fila">
             <div class="grupo">
                <label class="campo" for="fecha">Fecha</label><br/>
@@ -68,6 +71,14 @@
          <input type="submit" value="Enviar"/>
          <input type="reset" value="Cancelar" id="cancel"/>
       </form>
+      <section class="reserva-layout">
+         <div class="card-form">asdasdasdasdasd111</div>
+         <aside class="card-resumen">asasdasassasa222</aside>
+      </section>
+
+      <section>
+         
+      </section>
    </main>
    <footer>
       <div id="conocenos">
@@ -82,11 +93,10 @@
             </p>
       </div>
       <div class="terms">
-            <a href="https://www.youtube.com/watch?v=hB7CDrVnNCs">
+            <a href="https://www.youtube.com/watch?v=PyoRdu-i0AQ">
                Política de Privacidad &reg;
             </a>
-      </div>
->>>>>>> 3ae15b7 (Creación del Menú y cambios en el Index)
+      </div>      
    </footer>
 </body>
 </html>
