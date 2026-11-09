@@ -1,39 +1,7 @@
-:root {
-  --bg-color: #B80000;
-  --bg-others: #FFDF74;
-  --bar: #0A0703; /*#ed2100*/
-  --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
-  --details:#ffa42d; /*#0A0703*/
-  --font: 'work sans', sans-serif;
-  /* -webkit-text-stroke: 3px #111;    contorno negro 
-  paint-order: stroke fill;  el contorno que esta por detrás del relleno */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background: var(--bg-color);
   font-family: var(--font);
   color: #ffdc78;
-}
-
-header {
-  background: var(--bar);
-  color: var(--details);
-  padding: 30px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; */
-  gap: 20px;
 }
 
 .hero {
@@ -63,53 +31,8 @@ header a p {
   gap: 20px;
 }
 
-header a{
-  text-decoration: none;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 15px;
-  font-weight: ;
-  background: var(--boton-bar);
-  padding: 10px 16px;
-  border-radius: 20px;
-}
-
-/*Menú hamburguesa cuando la pantalla es chica*/
-header nav {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	flex-wrap: wrap;
-	gap: 10px;
-}
-
-nav a {
-	margin-left: 0;
-   white-space: nowrap;
-}
-
-.hamb {
-	display: none;
-	border: none;
-	font-size: 30px;
-	background: var(--boton-bar);
-	border-radius: 12px;
-	padding: 0.15em;
-	color: var(--details);
-	cursor: pointer;
-}
-
 .Titulo_subtitulo1 {
   font-family: 'lilita one', sans-serif;
-}
-
-.fuente1 {
-  font-family: 'work sans', sans-serif;
-  font-size: 16pt;
-  color: #ffdc78;
 }
 
 .fuente2 {
@@ -119,12 +42,12 @@ nav a {
 }
 
 .reserva-layout {
-  color:#ff9100;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 40px;
-  padding: 60px 8%;
-  background: #ffdf74;
+   color:#ff9100;
+   display: grid;
+   grid-template-columns: 1fr 340px;
+   gap: 40px;
+   padding: 60px 8%;
+   background: #ffdf74;
 
 }
 
@@ -143,36 +66,3 @@ nav a {
   background: #b80000;
   color: #ffdf74;
 }
-
-
-/*Ajuste para el Menú hamburguesa*/
-@media(max-width: 768px) {
-	header {
-		position: relative;
-		flex-wrap: wrap;
-		padding: 15px 20px;
-	}
-
-	.hamb {
-		display: block;
-	}
-
-	header nav {
-		display: none;
-		flex-direction: column;
-		align-items: stretch;
-		width: 100%;
-		gap: 10px;
-	}
-
-	header nav.activo {
-		display: flex;
-	}
-
-	header nav a {
-		box-sizing: border-box;
-		width: 100%;
-		text-align: center;
-	}	
-}
-
