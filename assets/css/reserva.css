@@ -37,10 +37,20 @@ header {
 }
 
 .hero {
-  padding: 220px 8%;
+  padding: 220px 16%;
   background: var(--bg-color);
   border-bottom: 4px solid #0A0703;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: -100px;
   
+}
+
+.card-hero,
+.card-hero2 {
+  padding: 20px;
+  border-radius: 16px;
+  background: #0A0703;
 }
 
 header a p {
