@@ -1,68 +1,179 @@
 body {
   background: var(--bg-color);
-  font-family: var(--font);
+  font-family: var(--font-text);
   color: #ffdc78;
 }
 
+/* ===== Hero (sección roja) ===== */
 .hero {
-  padding: 220px 16%;
+  padding: 80px 8%;
   background: var(--bg-color);
   border-bottom: 4px solid #0A0703;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: -100px;
-  
 }
 
-.card-hero,
-.card-hero2 {
-  padding: 20px;
-  border-radius: 16px;
-  background: #0A0703;
+.hero-texto {
+  max-width: 600px;
+  padding-block: 40px;
 }
 
-header a p {
-  margin: 0;
-  font-size: 24pt;
-  color: var(--details);
-  align-items: center;
-  /* border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; */
-  gap: 20px;
+.etiqueta {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 3px solid #0A0703;
+  border-radius: 20px;
+  background: #ffdf74;
+  color: #0A0703;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.Titulo_subtitulo1 {
-  font-family: 'lilita one', sans-serif;
+.hero h1 {
+  margin-top: 24px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ff9100;
+  letter-spacing: -1.5px;
 }
 
-.fuente2 {
-  font-family: 'work sans', sans-serif;
-  font-size: 9.8pt;
-  color: #ffdc78;
+.hero p {
+  margin-top: 20px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #ffdf74;
 }
 
+/* ===== Sección de reserva (amarilla) ===== */
 .reserva-layout {
-   color:#ff9100;
-   display: grid;
-   grid-template-columns: 1fr 340px;
-   gap: 40px;
-   padding: 60px 8%;
-   background: #ffdf74;
-
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;                 /* espacio entre la tarjeta crema y la roja */
+  padding: 60px 8%;          /* espacio con los bordes de la pantalla */
+  background: #ffdf74;
+  align-items: start;
 }
 
+/* ===== Tarjetas ===== */
 .card-form,
 .card-resumen {
-  background:#0A0703;
-  padding: 32px;
+  padding: 32px;             /* espacio interno de cada tarjeta */
+  border: 3px solid #0A0703;
   border-radius: 16px;
 }
 
 .card-form {
   background: #fff8E7;
+  color: #0A0703;
 }
 
 .card-resumen {
   background: #b80000;
   color: #ffdf74;
+}
+
+.etiqueta-chica {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b80000;
+}
+
+.card-form h2,
+.card-resumen h2 {
+  margin-top: 8px;
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+}
+
+.card-form h2 {
+  color: #0A0703;
+}
+
+.card-resumen h2 {
+  color: #ffdf74;
+}
+
+/* Paso 1: número + pregunta */
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 12px;                 /* espacio entre el número y la pregunta */
+  margin-top: 32px;
+}
+
+.paso .numero {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #0A0703;
+  border-radius: 8px;
+  background: #ff9100;
+  color: #0A0703;
+  font-weight: 800;
+}
+
+.paso h3 {
+  font-family: var(--font-title);
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: #0A0703;
+  letter-spacing: -0.5px;
+}
+
+/* Botones de día */
+.dias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;                 /* espacio entre los botones */
+  margin-top: 20px;
+}
+
+.dias button {
+  flex: 1 1 100px;
+  min-height: 70px;
+  padding: 12px;
+  border: 2px solid #0A0703;
+  border-radius: 12px;
+  background: #fff8E7;
+  color: #0A0703;
+  font-family: var(--font-text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Resumen */
+.resumen-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;                  /* espacio entre la etiqueta y el valor */
+  padding-block: 16px;
+  border-bottom: 1px solid rgba(255, 223, 116, 0.4);
+}
+
+.resumen-item:last-child {
+  border-bottom: none;
+}
+
+.resumen-item span {
+  font-size: 0.95rem;
+}
+
+.resumen-item strong {
+  font-size: 1.3rem;
+  color: #ffdf74;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .reserva-layout {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+
+  .hero {
+    padding: 60px 5%;
+  }
 }
