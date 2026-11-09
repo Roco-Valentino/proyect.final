@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fbf6ee;
+  color: #2a1f18;
+}
+
+header {
+  background-color: #d9531e;
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 6px 0 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #d9531e;
+  border-bottom: 2px solid #d9531e;
+  padding-bottom: 4px;
+}
+
+.plato {
+  background-color: white;
+  border: 1px solid #e8dccb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.plato h3 {
+  margin: 0 0 4px;
+}
+
+.plato p {
+  margin: 0 0 8px;
+  color: #7a6a5d;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #7a6a5d;
+}
