@@ -1,15 +1,29 @@
-// ==========================================================
-// Página de reservas
-// ==========================================================
-
 const form = document.getElementById('booking-form');
 const message = document.getElementById('form-message');
 const submitButton = document.getElementById('submit-button');
 const partySize = document.getElementById('party-size');
+const contFechas = document.getElementById('date-options');
 
 const state = { date: '', dateLabel: '', time: '' };
 
-// ---------- Mensajes ----------
+const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+const hoy = new Date();
+for (let i = 0; i < 7; i++) {
+  const d = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + i);
+  const iso = [
+    d.getFullYear(),
+    String(d.getMonth() + 1).padStart(2, '0'),
+    String(d.getDate()).padStart(2, '0')
+  ].join('-');
+  const boton = document.createElement('button');
+  boton.type = 'button';
+  boton.className = 'choice';
+  boton.dataset.date = iso;
+  boton.setAttribute('aria-pressed', 'false');
+  boton.textContent = (i === 0 ? 'Hoy ' : diasSemana[d.getDay()] + ' ') + d.getDate();
+  contFechas.appendChild(boton);
+}
+
 function mostrarMensaje(texto, exito = false) {
   message.textContent = texto;
   message.classList.remove('oculto');
@@ -21,8 +35,7 @@ function ocultarMensaje() {
   message.classList.remove('exito');
 }
 
-// ---------- Día ----------
-document.getElementById('date-options').addEventListener('click', event => {
+contFechas.addEventListener('click', event => {
   const boton = event.target.closest('[data-date]');
   if (!boton) return;
 
@@ -36,7 +49,6 @@ document.getElementById('date-options').addEventListener('click', event => {
   ocultarMensaje();
 });
 
-// ---------- Horario (almuerzo o cena) ----------
 document.querySelectorAll('[data-time-group]').forEach(grupo => {
   grupo.addEventListener('click', event => {
     const boton = event.target.closest('[data-time]');
@@ -52,20 +64,16 @@ document.querySelectorAll('[data-time-group]').forEach(grupo => {
   });
 });
 
-// ---------- Cantidad de personas ----------
 partySize.addEventListener('change', event => {
   const count = Number(event.target.value);
   document.getElementById('summary-party').textContent =
     count + (count === 1 ? ' persona' : ' personas');
 });
 
-// ---------- Cumpleaños: lleva a la página de reserva de cumpleaños ----------
-// cumple.html está en la misma carpeta (html/), por eso la ruta es solo el nombre del archivo.
 document.getElementById('birthday-button').addEventListener('click', () => {
   window.location.href = 'cumple.html';
 });
 
-// ---------- Envío ----------
 form.addEventListener('submit', event => {
   event.preventDefault();
 
@@ -79,8 +87,6 @@ form.addEventListener('submit', event => {
     mostrarMensaje('Escribí tu nombre.');
     return document.getElementById('guest-name').focus();
   }
-  // \D = cualquier cosa que no sea número. Quitamos espacios, guiones y paréntesis
-  // y contamos solo los dígitos: si quedan menos de 6, el teléfono no es válido.
   if (telefono.replace(/\D/g, '').length < 6) {
     mostrarMensaje('Ingresá un celular o WhatsApp válido.');
     return document.getElementById('phone').focus();
@@ -90,10 +96,6 @@ form.addEventListener('submit', event => {
     return email.focus();
   }
 
-  // Acá va el envío real de la reserva (por ejemplo, a un servidor o a una planilla).
-  // Por ahora solo muestra la confirmación en pantalla.
-  // Juntamos todo en un solo objeto: es el paquete que después se enviaría al servidor.
-  // creado guarda la fecha y hora del envío en formato ISO (estándar para bases de datos).
   const datos = {
     fecha: state.date,
     hora: state.time,

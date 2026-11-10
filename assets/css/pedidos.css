@@ -3,7 +3,7 @@
     padding-top: 30px;
     color: #ffa42d;
     text-align: center;
-    font-family: 'lilita one', sans-serif;
+    font-family: 'Lilita One', sans-serif;
     font-size: 70px;
 }
 .descripcion{
@@ -18,13 +18,14 @@
     align-items: center;
     justify-content: space-around;
     background-color: #ffdf74;
-    
     border-top: 5px solid #ffa42d;
 }
 .cajitas{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    gap: 15px;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -48,7 +49,6 @@ span{
   letter-spacing: 1.5px;
 }
 .pe{
-
     font-family: 'Archivo', sans-serif;
 }
 .arma{
@@ -63,7 +63,7 @@ span{
     padding-bottom: 20px;
 }
 form{
-    width: 450px;
+    width: min(450px, 90%);
     border: 3px solid #000000;
     border-radius: 10px;
     display: flex;
@@ -88,7 +88,7 @@ input{
     color:#B80000;
     -webkit-text-stroke: #000000 2px;
     text-align: center;
-    font-family: 'lilita one', sans-serif;
+    font-family: 'Lilita One', sans-serif;
     font-weight: 900;
     font-size: 60px;
 }
@@ -102,7 +102,7 @@ h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .fin h1{
-   color: #ffffff;
+    color: #ffffff;
     margin-top: 20px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

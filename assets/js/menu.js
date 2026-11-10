@@ -1,4 +1,3 @@
-// ---------- Comidas ----------
 const platos = [
    { nombre: "Napolitana Simple ", desc: "Jamón, Mozzarella, Orégano y Salsa de Tomate.", precio: 18500, categoria: "Especialidad", img:"../assets/img/especialidad1.jpeg" },
    { nombre: "Cheddar & Panceta", desc: "Cheddar, Panceta, Cebolla Morada y Cebollin de Verdeo.", precio: 19200, categoria: "Especialidad", img: "../assets/img/especialidad2.webp" },
@@ -12,29 +11,26 @@ const platos = [
    { nombre: "Milanesa Chicken", desc: "De Pechuga de Pollo.", precio: 17500, categoria: "General", img: "../assets/img/general2.webp" },
    { nombre: "Milanesa Veggie", desc: "De Zapallo o Berengena.", precio: 18000, categoria: "General", img: "../assets/img/general1.jpg" },
    { nombre: "Milanesa clásica", desc: "Sanguche clasico con Lechuga, Tomate y Mayonesa Casera de la casa.", precio: 17000, categoria: "General", img: "../assets/img/general4.webp" },
-   
+
    { nombre: "Flan casero", desc: "Flan Clásico con dulce de leche o crema.", precio: 13500, categoria: "Postres", img: "../assets/img/postre1.webp" },
    { nombre: "Panqueques", desc: "Mini Torre de Panqueques con Frutilla.", precio: 13500, categoria: "Postres", img: "../assets/img/postre2.avif" },
-   
-   { nombre: "Mini mila", desc: "Milanesa de Carne con Pápas Fritas.",   precio: 15500, categoria: "Infantil", img: "../assets/img/infantil1.webp" },
-   { nombre: "Nuggets", desc: "Nuggets de Pollo con Bolas de Pápas.",   precio: 16500, categoria: "Infantil", img: "../assets/img/infantil2.webp" },
 
-   { nombre: "Gaseosa", desc: "Con Opción de Línea.", precio: 7500, categoria: "Bebidass", img: "../assets/img/bebida1.avif" },
-   { nombre: "Agua Mineral", desc: "Con Gas o Sin Gas.", precio: 6500, categoria: "Bebidass", img: "../assets/img/bebida2.avif" },
-   { nombre: "Jugo Natural", desc: "Con la fruta que deseé.", precio: 7000, categoria: "Bebidass", img: "../assets/img/bebida3.avif" },
+   { nombre: "Mini mila", desc: "Milanesa de Carne con Pápas Fritas.", precio: 15500, categoria: "Infantil", img: "../assets/img/infantil1.webp" },
+   { nombre: "Nuggets", desc: "Nuggets de Pollo con Bolas de Pápas.", precio: 16500, categoria: "Infantil", img: "../assets/img/infantil2.webp" },
+
+   { nombre: "Gaseosa", desc: "Con Opción de Línea.", precio: 7500, categoria: "Bebidas", img: "../assets/img/bebida1.avif" },
+   { nombre: "Agua Mineral", desc: "Con Gas o Sin Gas.", precio: 6500, categoria: "Bebidas", img: "../assets/img/bebida2.avif" },
+   { nombre: "Jugo Natural", desc: "Con la fruta que deseé.", precio: 7000, categoria: "Bebidas", img: "../assets/img/bebida3.avif" },
 ];
 
-// Las categorías se calculan solas a partir de los platos
 const categorias = [...new Set(platos.map(p => p.categoria))];
 const contBotones = document.getElementById("ini");
 const grilla = document.getElementById("grilla");
 
-// ---------- Botones ----------
 contBotones.innerHTML = categorias
-   .map((c, i) => `<button class="inc ${i === 0 ? "activo" : ""}" data-cat="${c}">${c}</button>`)
+   .map(c => `<button class="inc" data-cat="${c}">${c}</button>`)
    .join("");
 
-// ---------- Carta de presentación ----------
 function mostrar(categoria) {
    grilla.innerHTML = platos
       .filter(p => p.categoria === categoria)
@@ -49,7 +45,6 @@ function mostrar(categoria) {
    .join("");
 }
 
-// Cambia cuando se apreta el botón de la categoría
 contBotones.addEventListener("click", e => {
    const btn = e.target.closest(".inc");
    if (!btn) return;
@@ -58,5 +53,10 @@ contBotones.addEventListener("click", e => {
    mostrar(btn.dataset.cat);
 });
 
-// Carga inicial: primera categoría (Especialidad)
-mostrar(categorias[0]);
+const hash = decodeURIComponent(location.hash.slice(1)).toLowerCase();
+const inicial = categorias.find(c => c.toLowerCase() === hash) ?? categorias[0];
+
+contBotones.querySelectorAll(".inc").forEach(b =>
+   b.classList.toggle("activo", b.dataset.cat === inicial)
+);
+mostrar(inicial);

@@ -1,14 +1,14 @@
 :root {
   --bg-color: #B80000;
   --bg-others: #FFDF74;
-  --bar: #0A0703; /*#ed2100*/
-  --boton-bar: #B80000; /*rgb(219, 7, 7)*/ 
+  --bar: #0A0703;
+  --boton-bar: #B80000;
   --details:#ffa42d;
-  --line: #d8bc61; /*#0A0703*/
+  --line: #d8bc61;
+  --shadow: rgba(0, 0, 0, 0.25);
   --font-title: 'Lilita One', sans-serif;
   --font-subtitle: 'Montserrat Alternates', sans-serif;
   --font-text: 'Nunito', sans-serif;
-  /*paint-order: stroke fill;  el contorno que esta por detrás del relleno */
 }
 
 header {
@@ -19,12 +19,9 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 5px var(--details) solid;
-  /* border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px; */
   gap: 20px;
 }
 
-/*Titulo Wachinesas*/
 header a p {
   margin: 0;
   font-family: var(--font-title);
@@ -55,7 +52,6 @@ nav a:hover {
    transform: scale(1.1);
 }
 
-/*Menú hamburguesa cuando la pantalla es chica*/
 header nav {
 	display: flex;
 	align-items: center;
@@ -76,7 +72,6 @@ header nav {
 	cursor: pointer;
 }
 
-/*Ajuste para el Menú hamburguesa*/
 @media(max-width: 768px) {
 	header {
 		position: relative;
@@ -110,7 +105,6 @@ header nav {
       transform: scale(1.05);
    }
 }
-/*==================================== Finalización del header ====================================*/
 
 html {
   scroll-behavior: smooth;
@@ -128,8 +122,6 @@ body {
 button, .inc, .hamb {
   font-family: var(--font-text);
 }
-
-/*==================================== Footer ====================================*/
 
 footer {
 	background: var(--bg-color);
@@ -149,8 +141,8 @@ footer {
   color: var(--bar);
   text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
   letter-spacing: -1.5px;
-  color: var(--details);              /* naranja #F7A93B */
-  -webkit-text-stroke: 3px #111;      /* contorno negro */
+  color: var(--details);
+  -webkit-text-stroke: 3px #111;
   paint-order: stroke fill;
   text-shadow: 3px 4px 0 #111;
   overflow-wrap: anywhere;
@@ -168,7 +160,6 @@ footer {
    text-decoration: none;
    margin: 2px;
 }
-
 
 #us::after {
    content: "";

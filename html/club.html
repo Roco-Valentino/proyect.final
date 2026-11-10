@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club de las Wachinesas</title>
 <style>
 :root {
@@ -110,9 +112,15 @@ input {
     font-weight: bold;
     text-align: center;
     margin-top: 25px;
+    cursor: pointer;
 }
 .aviso {
     font-size: 11px;
+    margin-top: 15px;
+}
+#mensaje {
+    font-size: 14px;
+    font-weight: bold;
     margin-top: 15px;
 }
 footer {
@@ -129,7 +137,11 @@ footer {
 <header>
     <h1>WACHINESAS</h1>
     <nav>
-        <a href="index.html">Inicio</a> 
+        <a href="../index.html">Inicio</a>
+        <a href="menu.html">Men&#250;</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="pedidos.html">Pedidos a Domicilio</a>
+    </nav>
 </header>
 <section id="beneficios">
     <div class="wrap">
@@ -146,7 +158,7 @@ footer {
 </section>
 
 <section id="unirse">
-    <form>
+    <form id="form-club">
         <fieldset>
 
             <label for="nombre">Nombre *</label>
@@ -168,7 +180,7 @@ footer {
         <p class="aviso">
             Te avisamos cuando tu carnet esté listo para retirar.
         </p>
-
+        <p id="mensaje" role="status" aria-live="polite"></p>
     </form>
 
 </section>
@@ -177,5 +189,12 @@ footer {
     Wachinesas · Donde tu Wacho paga las milanesas
 </footer>
 
+<script>
+document.getElementById('form-club').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('mensaje').textContent = '¡Listo! Recibimos tus datos para el club.';
+    e.target.reset();
+});
+</script>
 </body>
 </html>

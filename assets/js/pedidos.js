@@ -1,6 +1,7 @@
 function enviarPedido() {
   let nombre = document.getElementById("nombre").value;
   let direccion = document.getElementById("direccion").value;
+  let telefono = document.getElementById("telefono").value;
   let producto = document.getElementById("milanesa").value;
   let cantidad = document.getElementById("cantidad").value;
   let bebida = document.getElementById("bebida").value;
@@ -10,6 +11,7 @@ function enviarPedido() {
                 "- " + cantidad + " x " + producto + "\n" +
                 "bebida: " + bebida + "\n" +
                 "Dirección: " + direccion + "\n" +
+                "Teléfono: " + telefono + "\n" +
                 "Pago: " + pago;
 
   let numero = "542995233259";

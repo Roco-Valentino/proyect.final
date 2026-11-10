@@ -28,14 +28,13 @@
          <a href="menu.html">Men&#250;</a>
          <a href="reservas.html" class="actual" aria-current="page">Reservas</a>
          <a href="cumple.html">Reserva de Cumplea&ntilde;os</a>
-         <a href="#">Pedidos a Domicilio</a>
+         <a href="pedidos.html">Pedidos a Domicilio</a>
          <a href="club.html">Club</a>
       </nav>
    </header>
 
    <main>
 
-      <!-- ===== Hero ===== -->
       <section class="hero">
          <div class="hero-texto">
             <p class="etiqueta">WACHINESAS · RESERVAS</p>
@@ -43,40 +42,27 @@
             <p class="hero-descripcion">Elegí día, hora y cuántos son. Nosotros guardamos las milanesas.</p>
          </div>
 
-         <!-- <figure> agrupa la foto con su etiqueta. El estilo de inclinación está en reserva.css -->
          <figure class="hero-imagen">
             <img src="https://images.pexels.com/photos/36921554/pexels-photo-36921554.png" alt="Comida recién preparada sobre una mesa">
             <figcaption class="hero-tag">¡Nos vemos en la mesa!</figcaption>
          </figure>
       </section>
 
-      <!-- ===== Formulario y resumen ===== -->
       <section id="reservas" class="reservas">
          <div class="reservas-grid">
 
-            <!-- novalidate desactiva la validación automática del navegador: la hace reservas.js -->
             <form id="booking-form" class="card-form" novalidate>
                <p class="kicker">TU LUGAR TE ESPERA</p>
                <h2 class="titulo-form">Armá tu reserva</h2>
 
-               <!-- Paso 1: día -->
                <fieldset class="bloque">
                   <legend class="paso">
                      <span class="numero" aria-hidden="true">1</span>
                      <span class="titulo-paso">¿Qué día venís?</span>
                   </legend>
-                  <div id="date-options" class="dias">
-                     <button type="button" class="choice" data-date="2026-11-07" aria-pressed="false">Hoy 7</button>
-                     <button type="button" class="choice" data-date="2026-11-08" aria-pressed="false">Dom 8</button>
-                     <button type="button" class="choice" data-date="2026-11-09" aria-pressed="false">Lun 9</button>
-                     <button type="button" class="choice" data-date="2026-11-10" aria-pressed="false">Mar 10</button>
-                     <button type="button" class="choice" data-date="2026-11-11" aria-pressed="false">Mié 11</button>
-                     <button type="button" class="choice" data-date="2026-11-12" aria-pressed="false">Jue 12</button>
-                     <button type="button" class="choice" data-date="2026-11-13" aria-pressed="false">Vie 13 de noviembre</button>
-                  </div>
+                  <div id="date-options" class="dias"></div>
                </fieldset>
 
-               <!-- Paso 2: cantidad de personas -->
                <div class="bloque">
                   <label for="party-size" class="paso">
                      <span class="numero" aria-hidden="true">2</span>
@@ -96,7 +82,6 @@
                   </select>
                </div>
 
-               <!-- Paso 3: horario -->
                <fieldset class="bloque">
                   <legend class="paso">
                      <span class="numero" aria-hidden="true">3</span>
@@ -123,7 +108,6 @@
                   </div>
                </fieldset>
 
-               <!-- Paso 4: datos del contacto -->
                <fieldset class="bloque">
                   <legend class="paso">
                      <span class="numero" aria-hidden="true">4</span>
@@ -199,7 +183,7 @@
    <footer>
       <p class="footer-texto">Wachinesas · Donde tu Wacho paga las milanesas</p>
       <p class="footer-texto">&copy; 2026 Wachinesas. Todos los derechos reservados.</p>
-      <a class="footer-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Política de Privacidad &reg;</a>
+      <a class="footer-link" href="https://www.youtube.com/watch?v=hB7CDrVnNCs">Política de Privacidad &reg;</a>
    </footer>
 
 </body>
