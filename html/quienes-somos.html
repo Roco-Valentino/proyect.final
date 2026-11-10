@@ -1,77 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiénes somos | Wachinesas</title>
-    <style>
-     header {
-      background: #e63946;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
-    }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat+Alternates:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="../assets/css/estilos.css">
+   <link rel="stylesheet" href="../assets/css/somos.css">
+   <script src="../assets/js/index.js" defer></script>
+
+   <title>Quiénes somos | Wachinesas</title>
 </head>
 <body>
-    <header>
-        <h1>WACHINESAS</h1>
-        <nav>
-            <a href="../index.html">Inicio</a>
-        </nav>
-    </header>
-    <center>
-        <h1>¿Quiénes somos?</h1>
-        <h2>Integrantes del restaurante</h2>
-        <p>Una idea entre amigos, un sueño hecho realidad.
-        Wachinesas nació de la idea y las ganas de cinco amigos, que decidieron unirse para crear algo propio: un emprendimiento gastronómico dedicado a las milanesas.
-        Todo comenzó con una charla, algunas ideas y muchas ganas de hacer algo juntos. Cada uno aportó su granito de arena, desde la organización y la planificación hasta la preparación de los alimentos y la creatividad para darle identidad al proyecto.
-        El camino no fue solamente cocinar y vender, sino también aprender a trabajar en equipo, compartir responsabilidades, superar dificultades y descubrir nuevas habilidades. Cada integrante vivió esta experiencia de una manera diferente, aportando sus conocimientos, su entusiasmo y su personalidad.
-        Entre risas, reuniones, pruebas de recetas y mucho esfuerzo, fuimos construyendo lo que hoy representa Wachinesas: un emprendimiento hecho con amistad, dedicación y pasión por la comida.
-        Nuestro objetivo es ofrecer milanesas ricas, de calidad y con ese toque especial que nos caracteriza, pero también demostrar que cuando cinco amigos se unen con ganas y compromiso, pueden transformar una idea en algo mucho más grande.</p>
-        <h2>Wachinesas no es solamente un restaurante de milanesas, es una experiencia, una amistad y un proyecto que construimos juntos.</h2>
-        <br>
-        <table border="1" cellpadding="15" cellspacing="10">
-            <tr>
-                <td>
-                    <h3>&#129770;Bautista Fernandez</h3>
-                    <a href="mailto:fernandezbautista0710@gmail.com">fernandezbautista0710@gmail.com</a>
-                    <h3>+54 9 2995 23-1653</h3>
-                </td>
-                <td>
-                    <h3>&#128551;Facundo Zalaya</h3>
-                    <a href="mailto:facundozalayapet20@gmail.com">facundozalayapet20@gmail.com</a>
-                    <h3>+54 9 2995 97-5831</h3>
-                </td>
-                <td>
-                    <h3>&#x1F33A;Julieta Nuñez</h3>
-                    <a href="mailto:juliietanuzz@gmail.com">juliietanuzz@gmail.com</a>
-                    <h3>+54 9 2995 23-3259</h3>
-                </td>
-                <td>
-                    <h3>&#128526;Valentino Roco</h3>
-                    <a href="mailto:rocovalentino@gmail.com">rocovalentino@gmail.com</a>
-                    <h3>+54 9 299-655-2879</h3>
-                </td>
-                <td>
-                    <h3>&#128590;Thiago Peñaflor</h3>
-                    <a href="mailto:Penaflor.thiago.epet20@gmail.com">Penaflor.thiago.epet20@gmail.com</a>
-                    <h3>+54 9 2993 32-8088</h3>
-                </td>
-            </tr>
-        </table>
-    </center>
+   <div class="cont">
+      <header>
+         <a href="../index.html" id="logo">
+            <p>WACHINESAS</p>
+         </a>
+         <button class="hamb"
+            id="botonMenu"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="navegacion"
+         >
+            &#9776;
+         </button>
+         <nav id="navegacion">
+            <a href="menu.html">Men&#250;</a>
+            <a href="reservas.html">Reservas</a>
+            <a href="cumple.html">Reserva de Cumplea&ntilde;os</a>
+            <a href="pedidos.html">Pedidos a Domicilio</a>
+            <a href="club.html">Club</a>
+         </nav>
+      </header>
+
+      <main>
+         <div class="somos">
+            <h1 id="title">¿Quiénes somos?</h1>
+
+            <!-- Historia del proyecto -->
+            <section class="historia">
+               <h2>Una idea entre amigos, un sueño hecho realidad</h2>
+               <p>Wachinesas nació de la idea y las ganas de cinco amigos, que decidieron unirse para crear algo propio: un emprendimiento gastronómico dedicado a las milanesas.</p>
+               <p>Todo comenzó con una charla, algunas ideas y muchas ganas de hacer algo juntos. Cada uno aportó su granito de arena, desde la organización y la planificación hasta la preparación de los alimentos y la creatividad para darle identidad al proyecto.</p>
+               <p>El camino no fue solamente cocinar y vender, sino también aprender a trabajar en equipo, compartir responsabilidades, superar dificultades y descubrir nuevas habilidades. Cada integrante vivió esta experiencia de una manera diferente, aportando sus conocimientos, su entusiasmo y su personalidad.</p>
+               <p>Entre risas, reuniones, pruebas de recetas y mucho esfuerzo, fuimos construyendo lo que hoy representa Wachinesas: un emprendimiento hecho con amistad, dedicación y pasión por la comida.</p>
+               <p>Nuestro objetivo es ofrecer milanesas ricas, de calidad y con ese toque especial que nos caracteriza, pero también demostrar que cuando cinco amigos se unen con ganas y compromiso, pueden transformar una idea en algo mucho más grande.</p>
+
+               <ul class="valores">
+                  <li>Amistad</li>
+                  <li>Dedicación</li>
+                  <li>Pasión por la comida</li>
+               </ul>
+            </section>
+
+            <!-- Frase destacada -->
+            <blockquote class="lema">
+               Wachinesas no es solamente un restaurante de milanesas, es una experiencia, una amistad y un proyecto que construimos juntos.
+            </blockquote>
+
+            <!-- Integrantes -->
+            <section class="equipo">
+               <h2>Integrantes del restaurante</h2>
+               <ul class="integrantes">
+                  <li class="integrante">
+                     <span class="avatar" aria-hidden="true">&#129770;</span>
+                     <h3>Bautista Fernandez</h3>
+                     <a href="mailto:fernandezbautista0710@gmail.com">fernandezbautista0710@gmail.com</a>
+                     <!-- Completar con el número real -->
+                     <p class="tel">+54 299 523 1653</p>
+                  </li>
+                  <li class="integrante">
+                     <span class="avatar" aria-hidden="true">&#128551;</span>
+                     <h3>Facundo Zalaya</h3>
+                     <a href="mailto:facundozalayapet20@gmail.com">facundozalayapet20@gmail.com</a>
+                     <p class="tel">+54 299 597 5831</p>
+                  </li>
+                  <li class="integrante">
+                     <span class="avatar" aria-hidden="true">&#x1F33A;</span>
+                     <h3>Julieta Nuñez</h3>
+                     <a href="mailto:juliietanuzz@gmail.com">juliietanuzz@gmail.com</a>
+                     <p class="tel">+54 número de telef</p>
+                  </li>
+                  <li class="integrante">
+                     <span class="avatar" aria-hidden="true">&#128526;</span>
+                     <h3>Valentino Roco</h3>
+                     <a href="mailto:rocovalentino@gmail.com">rocovalentino@gmail.com</a>
+                     <p class="tel">+54 número de telef</p>
+                  </li>
+                  <li class="integrante">
+                     <span class="avatar" aria-hidden="true">&#128590;</span>
+                     <h3>Thiago Peñaflor</h3>
+                     <a href="mailto:Penaflor.thiago.epet20@gmail.com">Penaflor.thiago.epet20@gmail.com</a>
+                     <p class="tel">+54 número de telef</p>
+                  </li>
+               </ul>
+            </section>
+         </div>
+      </main>
+
+      <footer>
+         <div id="conocenos">
+            <a href="quienes-somos.html" id="us">
+               <p>Sobre nosotros</p>
+            </a>
+            <p class="text">Somos estudiantes de 5to año que dejamos todo para poder cumplir nuestro sueño, ser un Restaurante de Milanesas. Queremos que las milanesas hablen por nosotros.</p>
+         </div>
+         <div>
+            <p class="text">
+               &copy; 2026 Wachinesas. Todos los derechos reservados.
+            </p>
+         </div>
+         <div class="text">
+            <a href="https://www.youtube.com/watch?v=hB7CDrVnNCs" class="terms">
+               Política de Privacidad &reg;
+            </a>
+         </div>
+      </footer>
+   </div>
 </body>
 </html>
