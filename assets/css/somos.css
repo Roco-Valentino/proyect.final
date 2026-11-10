@@ -1,0 +1,186 @@
+/* Fondo amarillo, igual que el menú */
+main {
+   background: var(--bg-others);
+   padding: 50px 0 70px;
+}
+
+/* Contenedor centrado que se adapta a cualquier pantalla */
+.somos {
+   width: min(1100px, 100% - 2rem);
+   margin-inline: auto;
+   font-family: var(--font-text);
+}
+
+/* ---------- Título principal (mismo estilo que el index) ---------- */
+#title {
+   font-family: var(--font-title);
+   font-size: clamp(2.5rem, 6vw, 4.5rem);
+   font-weight: 400;              /* Lilita One solo existe en 400 */
+   line-height: 1.05;
+   letter-spacing: -1px;
+   text-align: center;
+   text-transform: uppercase;
+   color: var(--details);
+   -webkit-text-stroke: 3px #111;
+   paint-order: stroke fill;
+   text-shadow: 3px 4px 0 #111;
+   overflow-wrap: anywhere;
+   margin-bottom: 40px;
+}
+
+/* ---------- Historia: tarjeta crema con sombra, como las del menú ---------- */
+.historia {
+   background: #fdeec5;
+   border: 2px solid var(--bar);
+   border-radius: 22px;
+   padding: clamp(20px, 4vw, 40px);
+   box-shadow: 7px 7px 0 var(--bar);
+}
+
+.historia h2 {
+   font-family: var(--font-subtitle);
+   font-weight: 900;
+   font-size: clamp(1.5rem, 3vw, 2.2rem);
+   line-height: 1.15;
+   color: var(--boton-bar);
+   margin-bottom: 20px;
+}
+
+.historia p {
+   font-size: clamp(1rem, 1.6vw, 1.15rem);
+   line-height: 1.7;
+   color: var(--bar);
+}
+
+.historia p + p {
+   margin-top: 1em;
+}
+
+/* Etiquetas con los valores del equipo */
+.valores {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   list-style: none;
+   margin-top: 28px;
+}
+
+.valores li {
+   background: var(--boton-bar);
+   color: var(--bg-others);
+   border-radius: 999px;
+   padding: 8px 18px;
+   font-family: var(--font-subtitle);
+   font-weight: 800;
+   font-size: .9rem;
+}
+
+/* ---------- Frase destacada ---------- */
+.lema {
+   margin: 50px 0;
+   background: var(--bar);
+   color: var(--details);
+   border-radius: 22px;
+   padding: clamp(22px, 4vw, 38px);
+   text-align: center;
+   font-family: var(--font-subtitle);
+   font-weight: 800;
+   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+   line-height: 1.4;
+   box-shadow: 7px 7px 0 var(--boton-bar);
+}
+
+/* ---------- Integrantes ---------- */
+.equipo h2 {
+   font-family: var(--font-subtitle);
+   font-weight: 900;
+   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+   color: var(--bar);
+   text-align: center;
+   margin-bottom: 32px;
+}
+
+.integrantes {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;    /* si sobra una tarjeta, queda centrada */
+   gap: 28px;
+   list-style: none;
+}
+
+.integrante {
+   flex: 1 1 190px;
+   max-width: 260px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   text-align: center;
+   background: #fdeec5;
+   border: 2px solid var(--bar);
+   border-radius: 22px;
+   padding: 26px 16px;
+   box-shadow: 7px 7px 0 var(--bar);
+   transition: all .2s ease;
+}
+
+.integrante:hover {
+   transform: translateY(-6px);
+   box-shadow: 10px 10px 0 var(--bar);
+}
+
+.avatar {
+   display: grid;
+   place-items: center;
+   width: 84px;
+   height: 84px;
+   border-radius: 50%;
+   background: var(--details);
+   border: 3px solid var(--bar);
+   box-shadow: 3px 3px 0 var(--bar);
+   font-size: 2.4rem;
+}
+
+.integrante h3 {
+   font-family: var(--font-subtitle);
+   font-weight: 800;
+   font-size: 1.2rem;
+   color: var(--boton-bar);
+}
+
+.integrante a,
+.integrante .tel {
+   font-size: .95rem;
+   overflow-wrap: anywhere;    /* los mails largos no se salen de la tarjeta */
+}
+
+.integrante a {
+   color: var(--bar);
+   font-weight: 700;
+   text-decoration: none;
+   border-bottom: 2px solid var(--details);
+   transition: color .3s ease;
+}
+
+.integrante a:hover {
+   color: var(--boton-bar);
+}
+
+.integrante .tel {
+   color: #555;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+   main { padding: 30px 0 50px; }
+
+   .historia,
+   .integrante,
+   .lema { box-shadow: 5px 5px 0 var(--bar); }
+   .lema { box-shadow: 5px 5px 0 var(--boton-bar); }
+
+   .integrante {
+      flex-basis: 100%;
+      max-width: none;
+   }
+}
