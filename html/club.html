@@ -1,148 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club de las Wachinesas</title>
-<style>
-:root {
-    --n: #000000;
-    --r: #c90000;
-    --a: #ffdf70;
-    --o: #ff9f1c;
-}
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--a);
-    color: var(--n);
-}
-header {
-    background: #080604;
-    text-align: center;
-    padding: 15px;
-}
-header h1 {
-    color: var(--o);
-    margin: 0 0 15px;
-    font-size: 28px;
-    font-weight: 900;
-}
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-}
-nav a {
-    background: var(--r);
-    color: var(--o);
-    text-decoration: none;
-    padding: 12px 14px;
-    border-radius: 30px;
-    font-size: 12px;
-}
-nav a:last-child {
-    border: 3px double var(--o);
-    outline: 2px solid var(--o);
-    outline-offset: 2px;
-}
-.wrap {
-    max-width: 450px;
-    margin: auto;
-    padding: 25px 18px;
-}
-#beneficios {
-    text-align: center;
-}
-#beneficios h2 {
-    font-size: 35px;
-}
-#unirse {
-    text-align: center;
-    padding: 20px 18px 65px;
-}
-#unirse h2 {
-    font-size: 48px;
-    font-weight: 900;
-    margin: 20px 0;
-}
-#unirse .intro {
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-fieldset {
-    border: 2px solid black;
-    border-radius: 25px;
-    box-shadow: 7px 7px 0 black;
-    padding: 20px;
-    text-align: left;
-    background: var(--a);
-}
-label {
-    display: block;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-input {
-    width: 100%;
-    height: 52px;
-    border: 2px solid black;
-    border-radius: 13px;
-    background: transparent;
-    padding: 15px;
-    margin-bottom: 18px;
-    font-size: 14px;
-}
-.btn {
-    display: block;
-    width: 100%;
-    background: var(--r);
-    color: var(--o);
-    text-decoration: none;
-    border: 2px solid black;
-    border-radius: 30px;
-    box-shadow: 5px 5px 0 black;
-    padding: 14px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 25px;
-    cursor: pointer;
-}
-.aviso {
-    font-size: 11px;
-    margin-top: 15px;
-}
-#mensaje {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-footer {
-    background: var(--r);
-    color: var(--o);
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    font-weight: bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat+Alternates:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/estilos.css">
+    <link rel="stylesheet" href="../assets/css/club.css">
+    <script src="../assets/js/index.js" defer></script>
+
+    <title>Club de las Wachinesas</title>
 </head>
 <body>
-<header>
-    <h1>WACHINESAS</h1>
-    <nav>
-        <a href="../index.html">Inicio</a>
-        <a href="menu.html">Men&#250;</a>
-        <a href="reservas.html">Reservas</a>
-        <a href="pedidos.html">Pedidos a Domicilio</a>
-    </nav>
-</header>
+    <header>
+      <a href="../index.html" class="brand">
+         <p class="brand-nombre">WACHINESAS</p>
+         <p class="brand-tagline">Donde tu Wacho paga las milanesas</p>
+      </a>
+
+      <button class="hamb" id="botonMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">
+         &#9776;
+      </button>
+
+      <nav id="navegacion" aria-label="Navegación principal">
+         <a href="menu.html">Men&#250;</a>
+         <a href="reservas.html">Reservas</a>
+         <a href="cumple.html" class="actual" aria-current="page">Reserva de Cumplea&ntilde;os</a>
+         <a href="pedidos.html">Pedidos a Domicilio</a>
+         <a href="club.html">Club</a>
+      </nav>
+   </header>
 <section id="beneficios">
     <div class="wrap">
         <p style="font-size:11px;font-weight:bold;letter-spacing:2px;">
@@ -173,9 +62,7 @@ footer {
 
         </fieldset>
 
-        <button class="btn" type="submit">
-            Anotarme al club
-        </button>
+        <input id="btn" type="submit" value="Anotarme al club">
 
         <p class="aviso">
             Te avisamos cuando tu carnet esté listo para retirar.
@@ -185,9 +72,24 @@ footer {
 
 </section>
 
-<footer>
-    Wachinesas · Donde tu Wacho paga las milanesas
-</footer>
+    <footer>
+        <div id="conocenos">
+            <a href="quienes-somos.html" id="us">
+                <p>Sobre nosotros</p>
+            </a>
+            <p class="text">Somos estudiantes de 5to año que dejamos todo para poder cumplir nuestro sueño, ser un Restaurante de Milanesas. Queremos que las milanesas hablen por nosotros.</p>
+        </div>
+        <div>
+            <p class="text">
+                &copy; 2026 Wachinesas. Todos los derechos reservados.
+            </p>
+        </div>
+        <div class="text">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="terms">
+                Política de Privacidad &reg;
+            </a>
+        </div>
+    </footer>
 
 <script>
 document.getElementById('form-club').addEventListener('submit', e => {

@@ -1,6 +1,7 @@
 :root {
   --bg-color: #B80000;
   --bg-others: #FFDF74;
+  --cream: #ffdc78;
   --bar: #0A0703;
   --boton-bar: #B80000;
   --details:#ffa42d;
@@ -30,6 +31,13 @@ header a p {
   text-autospace: -1.5px;
   align-items: center;
   gap: 20px;
+}
+
+.brand-tagline {
+  margin: 4px 0 0;
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 600 normal;
 }
 
 header a{
