@@ -109,7 +109,7 @@ main {
    aspect-ratio: 3 / 2;
    border: 2px solid var(--bar);
    border-radius: 14px;
-   background: repeating-linear-gradient(45deg, #fdeec5, #fdeec5 8px, #ecd592 8px, #ecd592 10px);
+   background: var(--bar);/*repeating-linear-gradient(45deg, #fdeec5, #fdeec5 8px, #ecd592 8px, #ecd592 10px);*/
    background-size: cover;
    background-position: center;
 }

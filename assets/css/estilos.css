@@ -6,11 +6,14 @@
   --boton-bar: #B80000;
   --details:#ffa42d;
   --line: #d8bc61;
+  --paper: #fff7e4;
   --shadow: rgba(0, 0, 0, 0.25);
   --font-title: 'Lilita One', sans-serif;
   --font-subtitle: 'Montserrat Alternates', sans-serif;
   --font-text: 'Nunito', sans-serif;
 }
+
+
 
 header {
   background: var(--bar);
@@ -23,12 +26,13 @@ header {
   gap: 20px;
 }
 
-header a p {
+.brand{
   margin: 0;
   font-family: var(--font-title);
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 3.5rem);
   color: var(--details);
   text-autospace: -1.5px;
+  text-transform: uppercase;
   align-items: center;
   gap: 20px;
 }
@@ -45,19 +49,28 @@ header a{
 }
 
 nav a {
-  color: var(--details);
-  text-decoration: none;
-  font-weight: bold;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
   background: var(--boton-bar);
-  padding: 8px 14px;
-  border-radius: 20px;
-  transition: all 0.4s;
-  margin-left: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
   white-space: nowrap;
+  transition: transform 0.16s, box-shadow 0.16s;
 }
 
 nav a:hover {
    transform: scale(1.1);
+   transform: translateY(-3px);
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
+#navegacion a.actual {
+  background: var(--details);
+  color: var(--bar);
 }
 
 header nav {
@@ -76,7 +89,7 @@ header nav {
    font-family: var(--font-text);
 	border-radius: 12px;
 	padding: 0.15em;
-	color: var(--details);
+	color: var(--paper);
 	cursor: pointer;
 }
 
@@ -123,12 +136,25 @@ html {
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-text);
+}
+
 body {
   background: var(--bg-color);
 }
 
 button, .inc, .hamb {
-  font-family: var(--font-text);
+	font-family: var(--font-text);
 }
 
 footer {

@@ -5,8 +5,6 @@
   --ink: #0a0500;
   --red: #b80000;
   --orange: #f9a12b;
-  --cream: #ffdc78;
-  --paper: #fff7e4;
 }
 
 /* Hace que el padding y el borde no agranden los campos */
@@ -20,7 +18,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font-text);
 }
 
 button,
@@ -42,75 +40,9 @@ button {
 /* ==========================================================
    Header y footer (igual que en reserva.css)
    ========================================================== */
-header {
-  background: var(--ink);
-  border-bottom: 4px solid var(--ink);
-  padding: 20px 30px;
-  align-items: center;
-}
 
 header .brand {
   text-decoration: none;
-}
-
-.brand-nombre {
-  margin: 0;
-  color: var(--orange);
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-
-.brand-tagline {
-  margin: 4px 0 0;
-  color: var(--cream);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-#navegacion a {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: var(--red);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.16s, box-shadow 0.16s;
-}
-
-#navegacion a:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 5px 0 var(--ink);
-}
-
-#navegacion a.actual {
-  background: var(--orange);
-  color: var(--ink);
-}
-
-footer {
-  padding: 32px 20px;
-  border-top: 4px solid var(--ink);
-  background: var(--ink);
-  color: var(--cream);
-  text-align: center;
-}
-
-.footer-texto {
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.footer-link {
-  color: var(--orange);
-  font-weight: 700;
 }
 
 /* ==========================================================
@@ -142,6 +74,7 @@ footer {
   font-size: clamp(2.2rem, 6vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
+  font-family: var(--font-title);
   letter-spacing: -0.04em;
   -webkit-text-stroke: 2px var(--ink);
   paint-order: stroke fill;
@@ -181,6 +114,7 @@ footer {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 900;
   text-align: center;
+  font-family: var(--font-subtitle);
   text-transform: uppercase;
   letter-spacing: -0.5px;
 }
@@ -277,7 +211,7 @@ footer {
 
 /* Paquete elegido: fondo naranja, usando :has() para no necesitar JavaScript */
 .paquete:has(input:checked) {
-  background: var(--orange);
+  background: var(--details);
   box-shadow: 6px 6px 0 var(--ink);
 }
 
@@ -317,6 +251,7 @@ footer {
 .titulo-form {
   margin: 0;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-family: var(--font-subtitle);
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
@@ -470,3 +405,4 @@ footer {
     font-size: 26px;
   }
 }
+

@@ -1,7 +1,7 @@
 .cont h1{
     -webkit-text-stroke: #000000 1px;
     padding-top: 30px;
-    color: #ffa42d;
+    color: var(--details);
     text-align: center;
     font-family: 'Lilita One', sans-serif;
     font-size: 70px;
@@ -17,8 +17,8 @@
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    background-color: #ffdf74;
-    border-top: 5px solid #ffa42d;
+    background-color: var(--bg-others);
+    border-top: 5px solid var(--details);
 }
 .cajitas{
     display: flex;
@@ -31,7 +31,7 @@
     padding-bottom: 30px;
 }
 .cajas{
-    background-color: #ffdf74;
+    background-color: var(--bg-others);
     justify-content: space-around;
     align-items: center;
     border: 3px solid #000000;
