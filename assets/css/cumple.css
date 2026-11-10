@@ -1,0 +1,472 @@
+/* ==========================================================
+   Página de cumpleaños (mismo lenguaje visual que reserva.css)
+   ========================================================== */
+:root {
+  --ink: #0a0500;
+  --red: #b80000;
+  --orange: #f9a12b;
+  --cream: #ffdc78;
+  --paper: #fff7e4;
+}
+
+/* Hace que el padding y el borde no agranden los campos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   Header y footer (igual que en reserva.css)
+   ========================================================== */
+header {
+  background: var(--ink);
+  border-bottom: 4px solid var(--ink);
+  padding: 20px 30px;
+  align-items: center;
+}
+
+header .brand {
+  text-decoration: none;
+}
+
+.brand-nombre {
+  margin: 0;
+  color: var(--orange);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  margin: 4px 0 0;
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#navegacion a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+#navegacion a:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
+#navegacion a.actual {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+footer {
+  padding: 32px 20px;
+  border-top: 4px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}
+
+.footer-texto {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-link {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ==========================================================
+   Hero centrado (rojo, ancho completo)
+   ========================================================== */
+.hero {
+  padding: 64px max(20px, calc((100% - 1440px) / 2));
+  background: var(--red);
+  border-bottom: 4px solid var(--ink);
+  text-align: center;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--cream);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--orange);
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--ink);
+}
+
+.hero-descripcion {
+  max-width: 560px;
+  margin: 24px auto 0;
+  color: var(--paper);
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.boton-principal {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--orange);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+.boton-principal:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.titulo-seccion {
+  margin: 0 0 40px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================================
+   Qué incluye
+   ========================================================== */
+.incluye,
+.paquetes,
+.reservar {
+  padding: 56px max(20px, calc((100% - 1440px) / 2));
+}
+
+.beneficios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.beneficio {
+  position: relative;
+  padding: 32px 24px 24px;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--ink);
+  text-align: center;
+}
+
+.beneficio-numero {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  transform: translateX(-50%);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: var(--orange);
+  font-weight: 900;
+}
+
+.beneficio h3 {
+  margin: 0 0 12px;
+  color: var(--red);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.beneficio p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   Paquetes (opciones seleccionables)
+   ========================================================== */
+.paquetes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* El radio original se oculta, pero el label sigue siendo clickeable */
+.paquete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: transform 0.16s, box-shadow 0.16s, background 0.16s;
+}
+
+.paquete input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.paquete:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 6px 0 var(--ink);
+}
+
+/* Paquete elegido: fondo naranja, usando :has() para no necesitar JavaScript */
+.paquete:has(input:checked) {
+  background: var(--orange);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.paquete:has(input:focus-visible) {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
+.paquete-nombre {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.paquete-detalle {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   Formulario
+   ========================================================== */
+.reservar {
+  background: var(--red);
+  border-top: 4px solid var(--ink);
+}
+
+.card-cumple {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.titulo-form {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitulo-form {
+  margin: 8px 0 32px;
+  color: var(--red);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.grid-campos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.grupo {
+  min-width: 0;
+}
+
+.grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.campo {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fffaf0;
+  color: var(--ink);
+  outline: none;
+}
+
+.campo:focus {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.campo-area {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.grupo-ancho {
+  grid-column: 1 / -1;
+}
+
+.boton-confirmar {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+.boton-confirmar:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.nota {
+  margin: 20px 0 0;
+  color: #514033;
+  font-size: 13px;
+  text-align: center;
+}
+
+.mensaje {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff0c2;
+  font-weight: 700;
+}
+
+.mensaje.exito {
+  background: #d9f3d3;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+/* Tablet: beneficios en 3 columnas, paquetes en 3 columnas, formulario en 2 */
+@media (min-width: 640px) {
+  .paquetes-grid,
+  .beneficios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-cumple {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 80px max(36px, calc((100% - 1440px) / 2));
+  }
+
+  .incluye,
+  .paquetes,
+  .reservar {
+    padding: 72px max(36px, calc((100% - 1440px) / 2));
+  }
+}
+
+/* Celulares: el título del hero se hace un poco más chico con menos contorno */
+@media (max-width: 700px) {
+  .hero h1 {
+    -webkit-text-stroke: 1.4px var(--ink);
+    text-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .beneficios,
+  .paquetes-grid {
+    gap: 28px;
+  }
+}
+
+/* Menú hamburguesa en celular (estilos de estilos.css + este ajuste) */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .brand-nombre {
+    font-size: 26px;
+  }
+}

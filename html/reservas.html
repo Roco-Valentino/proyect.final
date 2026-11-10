@@ -1,79 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Reservas | Las Wachinesas</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reservas | Wachinesas</title>
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Archivo:wght@400;700;800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="../assets/css/estilos.css">
    <link rel="stylesheet" href="../assets/css/reserva.css">
    <script src="../assets/js/index.js" defer></script>
-   <script src="../assets/js/funciones.js" defer></script>
+   <script src="../assets/js/reservas.js" defer></script>
 </head>
 <body>
-  <header>
-      <a href="../index.html" id="logo">
-         <p class="Titulo_subtitulo1"><strong>WACHINESAS</strong></p>
-         <p class="fuente2">Donde tu wacho paga las milanesas</p>
+
+   <header>
+      <a href="../index.html" class="brand">
+         <p class="brand-nombre">WACHINESAS</p>
+         <p class="brand-tagline">Donde tu Wacho paga las milanesas</p>
       </a>
-      <button class="hamb"
-         id="botonMenu"
-         aria-label="Abrir menú"
-         aria-expanded="false"
-         aria-controls="navegacion"
-      >
+
+      <button class="hamb" id="botonMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">
          &#9776;
       </button>
-      <nav id="navegacion">
+
+      <nav id="navegacion" aria-label="Navegación principal">
          <a href="menu.html">Men&#250;</a>
-         <a href="reservas.html">Reservas</a>
-         <a href="#">Reserva de Cumplea&ntilde;os</a>
+         <a href="reservas.html" class="actual" aria-current="page">Reservas</a>
+         <a href="cumple.html">Reserva de Cumplea&ntilde;os</a>
          <a href="#">Pedidos a Domicilio</a>
          <a href="club.html">Club</a>
       </nav>
    </header>
 
-   <section class="hero">
-      <div class="hero-texto">
-         <span class="etiqueta">Wachinesas · Reservas</span>
-         <h1>Reservá tu mesa</h1>
-         <p>Elegí día, hora y cuántos son. Nosotros guardamos las milanesas.</p>
-      </div>
-   </section>
+   <main>
 
-   <section class="reserva-layout">
-      <div class="card-form">
-         <p class="etiqueta-chica">Tu lugar te espera</p>
-         <h2>Armá tu reserva</h2>
+      <!-- ===== Hero ===== -->
+      <section class="hero">
+         <div class="hero-texto">
+            <p class="etiqueta">WACHINESAS · RESERVAS</p>
+            <h1>Reservá tu mesa</h1>
+            <p class="hero-descripcion">Elegí día, hora y cuántos son. Nosotros guardamos las milanesas.</p>
+         </div>
 
-         <div class="paso">
-            <span class="numero">1</span>
-            <h3>¿Qué día venís?</h3>
-         </div>
-         <div class="dias">
-            <button type="button">Hoy 7</button>
-            <button type="button">Dom 8</button>
-            <button type="button">Lun 9</button>
-            <button type="button">Mar 10</button>
-            <button type="button">Mié 11</button>
-            <button type="button">Jue 12</button>
-            <button type="button">Vie 13 de noviembre</button>
-         </div>
-      </div>
+         <!-- <figure> agrupa la foto con su etiqueta. El estilo de inclinación está en reserva.css -->
+         <figure class="hero-imagen">
+            <img src="https://images.pexels.com/photos/36921554/pexels-photo-36921554.png" alt="Comida recién preparada sobre una mesa">
+            <figcaption class="hero-tag">¡Nos vemos en la mesa!</figcaption>
+         </figure>
+      </section>
 
-      <aside class="card-resumen">
-         <h2>Tu reserva</h2>
-         <div class="resumen-item">
-            <span>Día</span>
-            <strong>Elegí un día</strong>
+      <!-- ===== Formulario y resumen ===== -->
+      <section id="reservas" class="reservas">
+         <div class="reservas-grid">
+
+            <!-- novalidate desactiva la validación automática del navegador: la hace reservas.js -->
+            <form id="booking-form" class="card-form" novalidate>
+               <p class="kicker">TU LUGAR TE ESPERA</p>
+               <h2 class="titulo-form">Armá tu reserva</h2>
+
+               <!-- Paso 1: día -->
+               <fieldset class="bloque">
+                  <legend class="paso">
+                     <span class="numero" aria-hidden="true">1</span>
+                     <span class="titulo-paso">¿Qué día venís?</span>
+                  </legend>
+                  <div id="date-options" class="dias">
+                     <button type="button" class="choice" data-date="2026-11-07" aria-pressed="false">Hoy 7</button>
+                     <button type="button" class="choice" data-date="2026-11-08" aria-pressed="false">Dom 8</button>
+                     <button type="button" class="choice" data-date="2026-11-09" aria-pressed="false">Lun 9</button>
+                     <button type="button" class="choice" data-date="2026-11-10" aria-pressed="false">Mar 10</button>
+                     <button type="button" class="choice" data-date="2026-11-11" aria-pressed="false">Mié 11</button>
+                     <button type="button" class="choice" data-date="2026-11-12" aria-pressed="false">Jue 12</button>
+                     <button type="button" class="choice" data-date="2026-11-13" aria-pressed="false">Vie 13 de noviembre</button>
+                  </div>
+               </fieldset>
+
+               <!-- Paso 2: cantidad de personas -->
+               <div class="bloque">
+                  <label for="party-size" class="paso">
+                     <span class="numero" aria-hidden="true">2</span>
+                     <span class="titulo-paso">¿Cuántos son?</span>
+                  </label>
+                  <select id="party-size" class="campo campo-select">
+                     <option value="1">1 persona</option>
+                     <option value="2">2 personas</option>
+                     <option value="3">3 personas</option>
+                     <option value="4" selected>4 personas</option>
+                     <option value="5">5 personas</option>
+                     <option value="6">6 personas</option>
+                     <option value="7">7 personas</option>
+                     <option value="8">8 personas</option>
+                     <option value="9">9 personas</option>
+                     <option value="10">10 personas</option>
+                  </select>
+               </div>
+
+               <!-- Paso 3: horario -->
+               <fieldset class="bloque">
+                  <legend class="paso">
+                     <span class="numero" aria-hidden="true">3</span>
+                     <span class="titulo-paso">¿A qué hora?</span>
+                  </legend>
+
+                  <h3 class="sub">Almuerzo</h3>
+                  <div class="horarios" data-time-group="lunch">
+                     <button type="button" class="choice" data-time="12:00" aria-pressed="false">12:00</button>
+                     <button type="button" class="choice" data-time="12:30" aria-pressed="false">12:30</button>
+                     <button type="button" class="choice" data-time="13:00" aria-pressed="false">13:00</button>
+                     <button type="button" class="choice" data-time="13:30" aria-pressed="false">13:30</button>
+                     <button type="button" class="choice" data-time="14:00" aria-pressed="false">14:00</button>
+                  </div>
+
+                  <h3 class="sub">Cena</h3>
+                  <div class="horarios" data-time-group="dinner">
+                     <button type="button" class="choice" data-time="20:00" aria-pressed="false">20:00</button>
+                     <button type="button" class="choice" data-time="20:30" aria-pressed="false">20:30</button>
+                     <button type="button" class="choice" data-time="21:00" aria-pressed="false">21:00</button>
+                     <button type="button" class="choice" data-time="21:30" aria-pressed="false">21:30</button>
+                     <button type="button" class="choice" data-time="22:00" aria-pressed="false">22:00</button>
+                     <button type="button" class="choice" data-time="22:30" aria-pressed="false">22:30</button>
+                  </div>
+               </fieldset>
+
+               <!-- Paso 4: datos del contacto -->
+               <fieldset class="bloque">
+                  <legend class="paso">
+                     <span class="numero" aria-hidden="true">4</span>
+                     <span class="titulo-paso">¿A nombre de quién?</span>
+                  </legend>
+
+                  <div class="grid-datos">
+                     <div class="grupo">
+                        <label for="guest-name">Nombre *</label>
+                        <input id="guest-name" class="campo" type="text" autocomplete="name" required maxlength="100">
+                     </div>
+                     <div class="grupo">
+                        <label for="phone">Celular / WhatsApp *</label>
+                        <input id="phone" class="campo" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30">
+                     </div>
+                     <div class="grupo">
+                        <label for="email">Email (opcional)</label>
+                        <input id="email" class="campo" type="email" autocomplete="email" maxlength="120">
+                     </div>
+                     <div class="grupo">
+                        <label for="area">Zona preferida</label>
+                        <select id="area" class="campo">
+                           <option value="Salón">Salón</option>
+                           <option value="Patio">Patio</option>
+                        </select>
+                     </div>
+                     <div class="grupo grupo-ancho">
+                        <label for="comments">Comentarios</label>
+                        <textarea id="comments" class="campo campo-area" maxlength="500"></textarea>
+                     </div>
+                  </div>
+               </fieldset>
+
+               <button type="submit" id="submit-button" class="boton-confirmar">Confirmar reserva</button>
+               <p class="nota">* Campos obligatorios. Tu solicitud queda sujeta a confirmación del restaurante.</p>
+               <p id="form-message" role="status" aria-live="polite" class="mensaje oculto"></p>
+            </form>
+
+            <aside class="columna-derecha">
+               <section class="card-resumen">
+                  <h2>Tu reserva</h2>
+                  <dl>
+                     <div class="resumen-item">
+                        <dt>Día</dt>
+                        <dd id="summary-date">Elegí un día</dd>
+                     </div>
+                     <div class="resumen-item">
+                        <dt>Hora</dt>
+                        <dd id="summary-time">Elegí un horario</dd>
+                     </div>
+                     <div class="resumen-item">
+                        <dt>Mesa para</dt>
+                        <dd id="summary-party">4 personas</dd>
+                     </div>
+                  </dl>
+               </section>
+
+               <section class="card-info">
+                  <h2>Antes de venir</h2>
+                  <p class="info-label">Horarios de reserva</p>
+                  <p class="info-texto">Almuerzo: 12:00 a 14:00. Cena: 20:00 a 22:30.</p>
+                  <p class="info-label">Llegada y tolerancia</p>
+                  <p class="info-texto">Tratá de llegar a horario. Si te demorás, avisá al restaurante; la tolerancia queda sujeta a su confirmación.</p>
+                  <button type="button" id="birthday-button" class="boton-cumple">¿Es un cumpleaños? Reservá acá</button>
+               </section>
+            </aside>
+
          </div>
-         <div class="resumen-item">
-            <span>Hora</span>
-            <strong>Elegí un horario</strong>
-         </div>
-      </aside>
-   </section>
+      </section>
+
+   </main>
+
+   <footer>
+      <p class="footer-texto">Wachinesas · Donde tu Wacho paga las milanesas</p>
+      <p class="footer-texto">&copy; 2026 Wachinesas. Todos los derechos reservados.</p>
+      <a class="footer-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Política de Privacidad &reg;</a>
+   </footer>
+
 </body>
 </html>

@@ -1,50 +1,181 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-     <title>Club de las Wachinesas</title>
-     <link rel="stylesheet" href="">
+<meta charset="utf-8">
+<title>Club de las Wachinesas</title>
+<style>
+:root {
+    --n: #000000;
+    --r: #c90000;
+    --a: #ffdf70;
+    --o: #ff9f1c;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--a);
+    color: var(--n);
+}
+header {
+    background: #080604;
+    text-align: center;
+    padding: 15px;
+}
+header h1 {
+    color: var(--o);
+    margin: 0 0 15px;
+    font-size: 28px;
+    font-weight: 900;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+nav a {
+    background: var(--r);
+    color: var(--o);
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+nav a:last-child {
+    border: 3px double var(--o);
+    outline: 2px solid var(--o);
+    outline-offset: 2px;
+}
+.wrap {
+    max-width: 450px;
+    margin: auto;
+    padding: 25px 18px;
+}
+#beneficios {
+    text-align: center;
+}
+#beneficios h2 {
+    font-size: 35px;
+}
+#unirse {
+    text-align: center;
+    padding: 20px 18px 65px;
+}
+#unirse h2 {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 20px 0;
+}
+#unirse .intro {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+fieldset {
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 7px 7px 0 black;
+    padding: 20px;
+    text-align: left;
+    background: var(--a);
+}
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+input {
+    width: 100%;
+    height: 52px;
+    border: 2px solid black;
+    border-radius: 13px;
+    background: transparent;
+    padding: 15px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+.btn {
+    display: block;
+    width: 100%;
+    background: var(--r);
+    color: var(--o);
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0 black;
+    padding: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+}
+.aviso {
+    font-size: 11px;
+    margin-top: 15px;
+}
+footer {
+    background: var(--r);
+    color: var(--o);
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+</style>
 </head>
 <body>
-     <h1>Club de las Wachinesas</h1>
-     <p>Para los que vuelven por la milanesa. Sumate al club y tené prioridad en reservas y cumpleaños.</p>
-     <div class="line"></div>
-     <div class="stripes" aria-hidden="true"></div>
+<header>
+    <h1>WACHINESAS</h1>
+    <nav>
+        <a href="index.html">Inicio</a> 
+</header>
+<section id="beneficios">
+    <div class="wrap">
+        <p style="font-size:11px;font-weight:bold;letter-spacing:2px;">
+            HECHO PARA COMER BIEN
+        </p>
 
-     <section id="beneficios">
-          <div class="wrap">
-               <h2>Qué te llevás</h2>
-               <div class="perks">
-                    <div>
-                         <h3>Reservas del club</h3>
-                         <p>Tu mesa primero, con horarios reservados para socios.</p>
-                    </div>
-                    <div>
-                         <h3>Novedades primero</h3>
-                         <p>Te enterás antes de las milanesas nuevas de cada línea del menú.</p>
-                    </div>
-               </div>
-          </div>
-     </section>
+        <h2>Anotate al club</h2>
 
-     <section class="dark" id="unirse">
-          <fieldset>
-               <div class="wrap">
-                    <h2>Cómo sumarte</h2>
-                    <ol>
-                    <li><span>1</span><p>Pedí tu carnet en el local.</p></li>
-                    <li><span>2</span><p>Anotá tu nombre y tu contacto.</p></li>
-                    <li><span>3</span><p>Reservá con prioridad cuando quieras volver.</p></li>
-                    </ol>
-               </div>
-          </fieldset>
-     </section>
-          <section class="cta">
-          <div class="wrap">
-               <h2>La mesa te espera</h2>
-               <a class="btn" style="border-color:var(--n)" href="#unirse">Quiero mi carnet</a>
-          </div>
-     </section>
+        <p style="font-weight:bold;font-size:14px;">
+            Dejanos tus datos y te damos tu carnet en el local.
+        </p>
+    </div>
+</section>
+
+<section id="unirse">
+    <form>
+        <fieldset>
+
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="celular">Celular / WhatsApp *</label>
+            <input type="tel" id="celular" name="celular"
+                   placeholder="299 123 4567" required>
+
+            <label for="email">Email (opcional)</label>
+            <input type="email" id="email" name="email">
+
+        </fieldset>
+
+        <button class="btn" type="submit">
+            Anotarme al club
+        </button>
+
+        <p class="aviso">
+            Te avisamos cuando tu carnet esté listo para retirar.
+        </p>
+
+    </form>
+
+</section>
+
+<footer>
+    Wachinesas · Donde tu Wacho paga las milanesas
+</footer>
+
 </body>
 </html>

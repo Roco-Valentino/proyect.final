@@ -1,179 +1,575 @@
+/* ==========================================================
+   Variables de la página de reservas
+   ========================================================== */
+:root {
+  --ink: #0a0500;
+  --red: #b80000;
+  --orange: #f9a12b;
+  --cream: #ffdc78;
+  --paper: #fff7e4;
+}
+
+/* ==========================================================
+   Base
+   ========================================================== */
+/* Hace que el padding y el borde de los campos entren dentro de su ancho (width: 100%).
+   Sin esto, los inputs se salen de la tarjeta y las columnas se pisan. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--bg-color);
-  font-family: var(--font-text);
-  color: #ffdc78;
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
 }
 
-/* ===== Hero (sección roja) ===== */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   Header (sobrescribe estilos.css para que coincida con el diseño)
+   ========================================================== */
+header {
+  background: var(--ink);
+  border-bottom: 4px solid var(--ink);
+  padding: 20px 30px;
+  align-items: center;
+}
+
+header .brand {
+  text-decoration: none;
+}
+
+.brand-nombre {
+  margin: 0;
+  color: var(--orange);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  margin: 4px 0 0;
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#navegacion a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+#navegacion a:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
+#navegacion a.actual {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+/* ==========================================================
+   Hero (sección roja)
+   ========================================================== */
 .hero {
-  padding: 80px 8%;
-  background: var(--bg-color);
-  border-bottom: 4px solid #0A0703;
-}
-
-.hero-texto {
-  max-width: 600px;
-  padding-block: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 32px;
+  /* El fondo ocupa todo el ancho; el contenido se centra con un máximo de 1440px */
+  padding: 48px max(20px, calc((100% - 1440px) / 2));
+  background: var(--red);
+  border-bottom: 4px solid var(--ink);
 }
 
 .etiqueta {
   display: inline-block;
-  padding: 8px 18px;
-  border: 3px solid #0A0703;
-  border-radius: 20px;
-  background: #ffdf74;
-  color: #0A0703;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  margin: 0 0 20px;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .hero h1 {
-  margin-top: 24px;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: #ff9100;
-  letter-spacing: -1.5px;
+  margin: 0;
+  max-width: 780px;
+  color: var(--orange);
+  font-size: 32px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--ink);
 }
 
-.hero p {
-  margin-top: 20px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #ffdf74;
+.hero-descripcion {
+  max-width: 620px;
+  margin: 32px 0 0;
+  color: var(--cream);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-/* ===== Sección de reserva (amarilla) ===== */
-.reserva-layout {
+/* Marco de la foto: el fondo negro + la sombra desplazada le dan el efecto de "tarjeta" */
+.hero-imagen {
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 4px solid var(--ink);
+  border-radius: 28px;
+  background: var(--ink);
+  box-shadow: 12px 12px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+
+.hero-imagen img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  border-radius: 19px;
+  object-fit: cover;
+  filter: saturate(1.13) contrast(1.08);
+}
+
+.hero-tag {
+  position: absolute;
+  left: -20px;
+  bottom: -22px;
+  padding: 10px 18px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 700;
+  transform: rotate(-4deg);
+}
+
+/* ==========================================================
+   Sección de reservas (crema)
+   ========================================================== */
+.reservas {
+  padding: 48px max(20px, calc((100% - 1440px) / 2)) 64px;
+  background: var(--cream);
+}
+
+.reservas-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 40px;                 /* espacio entre la tarjeta crema y la roja */
-  padding: 60px 8%;          /* espacio con los bordes de la pantalla */
-  background: #ffdf74;
+  grid-template-columns: 1fr;
   align-items: start;
+  gap: 32px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-/* ===== Tarjetas ===== */
-.card-form,
-.card-resumen {
-  padding: 32px;             /* espacio interno de cada tarjeta */
-  border: 3px solid #0A0703;
-  border-radius: 16px;
-}
-
+/* ----- Tarjeta del formulario ----- */
 .card-form {
-  background: #fff8E7;
-  color: #0A0703;
+  min-width: 0;
+  padding: 20px;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--ink);
 }
 
-.card-resumen {
-  background: #b80000;
-  color: #ffdf74;
-}
-
-.etiqueta-chica {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 3px;
+.kicker {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #b80000;
 }
 
-.card-form h2,
-.card-resumen h2 {
-  margin-top: 8px;
-  font-size: 1.6rem;
-  letter-spacing: -0.5px;
+.titulo-form {
+  margin: 0 0 36px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
 }
 
-.card-form h2 {
-  color: #0A0703;
+.bloque {
+  min-width: 0;
+  margin: 0 0 36px;
+  padding: 0;
+  border: 0;
 }
 
-.card-resumen h2 {
-  color: #ffdf74;
-}
-
-/* Paso 1: número + pregunta */
 .paso {
   display: flex;
   align-items: center;
-  gap: 12px;                 /* espacio entre el número y la pregunta */
-  margin-top: 32px;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 0;
 }
 
-.paso .numero {
-  display: grid;
+.numero {
+  display: inline-grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 2px solid #0A0703;
-  border-radius: 8px;
-  background: #ff9100;
-  color: #0A0703;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--ink);
+  border-radius: 9px;
+  background: var(--orange);
+  font-size: 16px;
   font-weight: 800;
 }
 
-.paso h3 {
-  font-family: var(--font-title);
-  font-weight: normal;
-  font-size: 1.2rem;
-  color: #0A0703;
-  letter-spacing: -0.5px;
+.titulo-paso {
+  font-size: 22px;
+  font-weight: 900;
 }
 
-/* Botones de día */
+.sub {
+  margin: 0 0 12px;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ----- Botones de día y horario ----- */
+.choice {
+  padding: 11px 13px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff7df;
+  color: var(--ink);
+  font-weight: 800;
+  transition: transform 0.16s, box-shadow 0.16s, background 0.16s;
+}
+
+.choice:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
+.choice[aria-pressed="true"] {
+  background: var(--orange);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Los días se acomodan en una grilla: 3 columnas en celular (se cambia en las media queries) */
 .dias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.horarios {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;                 /* espacio entre los botones */
-  margin-top: 20px;
+  gap: 8px;
+  margin: 0 0 20px;
 }
 
-.dias button {
-  flex: 1 1 100px;
-  min-height: 70px;
-  padding: 12px;
-  border: 2px solid #0A0703;
+/* ----- Campos ----- */
+.campo {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
   border-radius: 12px;
-  background: #fff8E7;
-  color: #0A0703;
-  font-family: var(--font-text);
-  font-weight: 700;
-  cursor: pointer;
+  background: #fffaf0;
+  color: var(--ink);
+  outline: none;
 }
 
-/* Resumen */
+.campo:focus {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.campo-select {
+  max-width: 240px;
+  font-weight: 700;
+}
+
+.campo-area {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.grid-datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.grupo-ancho {
+  grid-column: 1 / -1;
+}
+
+/* ----- Botón de confirmar y nota ----- */
+.boton-confirmar {
+  width: 100%;
+  margin-top: 8px;
+  padding: 16px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+.boton-confirmar:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.boton-confirmar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+.nota {
+  margin: 20px 0 0;
+  color: #514033;
+  font-size: 13px;
+}
+
+.mensaje {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff0c2;
+  font-weight: 700;
+}
+
+.mensaje.exito {
+  background: #d9f3d3;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ----- Columna derecha ----- */
+.columna-derecha {
+  display: grid;
+  gap: 28px;
+}
+
+/* Tarjetas de la columna derecha: comparten borde, radio y sombra */
+.card-resumen,
+.card-info {
+  padding: 24px;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.card-resumen {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.card-resumen h2 {
+  margin: 0 0 28px;
+  color: var(--cream);
+  font-size: 24px;
+  font-weight: 900;
+}
+
 .resumen-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;                  /* espacio entre la etiqueta y el valor */
-  padding-block: 16px;
-  border-bottom: 1px solid rgba(255, 223, 116, 0.4);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 220, 120, 0.5);
 }
 
 .resumen-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
-.resumen-item span {
-  font-size: 0.95rem;
+.resumen-item dt {
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.resumen-item strong {
-  font-size: 1.3rem;
-  color: #ffdf74;
+.resumen-item dd {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 900;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .reserva-layout {
-    grid-template-columns: 1fr;
-    padding: 40px 5%;
+.card-info {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.card-info h2 {
+  margin: 0 0 20px;
+  color: var(--orange);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.info-label {
+  margin: 0 0 4px;
+  font-weight: 800;
+}
+
+.info-texto {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.boton-cumple {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 900;
+  text-align: left;
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+.boton-cumple:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 5px 0 var(--cream);
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+footer {
+  padding: 32px 20px;
+  border-top: 4px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}
+
+.footer-texto {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-link {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+/* Tablets: los días en 4 columnas */
+@media (min-width: 640px) {
+  .dias {
+    grid-template-columns: repeat(4, 1fr);
   }
 
+  .grid-datos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-imagen img {
+    height: 360px;
+  }
+
+  .card-form {
+    padding: 32px;
+  }
+}
+
+/* Escritorio: dos columnas */
+@media (min-width: 768px) {
   .hero {
-    padding: 60px 5%;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    padding: 64px max(36px, calc((100% - 1440px) / 2));
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-tag {
+    left: -20px;
+  }
+
+  .reservas {
+    padding: 60px max(36px, calc((100% - 1440px) / 2)) 72px;
+  }
+}
+
+/* Pantallas grandes: formulario más ancho que el resumen */
+@media (min-width: 1024px) {
+  .reservas-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  }
+
+  .dias {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* Celulares: título y texto más chicos, menú hamburguesa de estilos.css */
+@media (max-width: 700px) {
+  .hero h1 {
+    -webkit-text-stroke: 1.4px var(--ink);
+    text-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .hero-imagen {
+    transform: rotate(-1deg);
   }
 }
