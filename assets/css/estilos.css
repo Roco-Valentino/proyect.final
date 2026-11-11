@@ -1,3 +1,5 @@
+/* Estilos generales del sitio: variables, encabezado, menú, pie y responsive. */
+/* Variables globales de color y tipografía. Se usan con var(--nombre) en las demás hojas. */
 :root {
   --bg-color: #B80000;
   --bg-others: #FFDF74;
@@ -11,6 +13,7 @@
   --font-text: 'Nunito', sans-serif;
 }
 
+/* Encabezado: barra negra con el logo a la izquierda y el menú a la derecha. */
 header {
   background: var(--bar);
   color: var(--details);
@@ -22,6 +25,7 @@ header {
   gap: 20px;
 }
 
+/* Texto del logo (WACHINESAS): tamaño, color y mayúsculas. */
 header a p {
   margin: 0;
   font-family: var(--font-title);
@@ -32,10 +36,12 @@ header a p {
   gap: 20px;
 }
 
+/* Quita el subrayado de los links del encabezado. */
 header a{
   text-decoration: none;
 }
 
+/* Botones del menú de navegación: cápsulas rojas con texto blanco. */
 nav a {
   color: var(--details);
   text-decoration: none;
@@ -48,10 +54,12 @@ nav a {
   white-space: nowrap;
 }
 
+/* Al pasar el mouse, el botón del menú se levanta. */
 nav a:hover {
    transform: scale(1.1);
 }
 
+/* Contenedor del menú: los botones van en fila y se alinean a la derecha. */
 header nav {
 	display: flex;
 	align-items: center;
@@ -60,6 +68,7 @@ header nav {
 	gap: 10px;
 }
 
+/* Botón de hamburguesa: oculto en pantallas grandes; se muestra en celulares. */
 .hamb {
 	display: none;
 	border: none;
@@ -72,17 +81,21 @@ header nav {
 	cursor: pointer;
 }
 
+/* Celulares y tablets (hasta 768 px): el menú pasa a hamburguesa. */
 @media(max-width: 768px) {
+	/* En celular, el encabezado se acomoda en varias líneas. */
 	header {
 		position: relative;
 		flex-wrap: wrap;
 		padding: 15px 20px;
 	}
 
+	/* En celular se muestra el botón hamburguesa. */
 	.hamb {
 		display: block;
 	}
 
+	/* En celular el menú está oculto y se apila en columna. */
 	header nav {
 		display: none;
 		flex-direction: column;
@@ -91,38 +104,46 @@ header nav {
 		gap: 10px;
 	}
 
+	/* Cuando index.js agrega la clase activo, el menú se muestra. */
 	header nav.activo {
 		display: flex;
 	}
 
+	/* En celular los botones ocupan todo el ancho. */
 	nav a {
 		box-sizing: border-box;
 		width: 100%;
 		text-align: center;
 	}
    
+   /* En celular el efecto al pasar el mouse es más leve. */
    nav a:hover {
       transform: scale(1.05);
    }
 }
 
+/* Desplazamiento suave al hacer clic en links con ancla. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Quita márgenes y rellenos por defecto de todos los elementos. */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Fondo y color base del cuerpo de la página. */
 body {
   background: var(--bg-color);
 }
 
+/* Tipografía de los botones. */
 button, .inc, .hamb {
   font-family: var(--font-text);
 }
 
+/* Pie de página: fondo rojo con borde amarillo arriba. */
 footer {
 	background: var(--bg-color);
 	color: var(--bar);
@@ -133,6 +154,7 @@ footer {
 	gap: 20px;
 }
 
+/* Texto Sobre nosotros del pie: letras amarillas con contorno negro. */
 #us p {
 	font-size: clamp(2.5rem, 4vw, 4rem);
   font-family: var(--font-subtitle);
@@ -149,11 +171,13 @@ footer {
   margin: 8px;
 }
 
+/* Links dentro de textos: sin subrayado. */
 .text a {
 	text-decoration: none;
    color: #080814;
 }
 
+/* Contenedor del link Sobre nosotros; position relative para la línea animada. */
 #us {
    position: relative;
    display: inline-block;
@@ -161,6 +185,7 @@ footer {
    margin: 2px;
 }
 
+/* Línea naranja debajo de Sobre nosotros, oculta hasta que se pasa el mouse. */
 #us::after {
    content: "";
    position: absolute;
@@ -176,10 +201,12 @@ footer {
    transition: transform 0.4s ease;
 }
 
+/* Al pasar el mouse, la línea se estira hasta el ancho completo. */
 #us:hover::after {
    transform: scaleX(1);
 }
 
+/* Tipografía del texto general. */
 .text {
    font-family: var(--font-text);
 }

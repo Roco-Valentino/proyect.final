@@ -33,10 +33,11 @@ main {
    background: #fdeec5;
    border: 2px solid var(--bar);
    border-radius: 22px;
-   padding: clamp(20px, 4vw, 40px);
+   padding: clamp(20px, 4vw, 40px);    /* el relleno crece con la pantalla, entre 20 y 40px */
    box-shadow: 7px 7px 0 var(--bar);
 }
 
+/* Título de la historia */
 .historia h2 {
    font-family: var(--font-subtitle);
    font-weight: 900;
@@ -46,12 +47,14 @@ main {
    margin-bottom: 20px;
 }
 
+/* Texto de la historia, con interlineado cómodo para leer */
 .historia p {
    font-size: clamp(1rem, 1.6vw, 1.15rem);
    line-height: 1.7;
    color: var(--bar);
 }
 
+/* Separación entre párrafos consecutivos */
 .historia p + p {
    margin-top: 1em;
 }
@@ -61,10 +64,11 @@ main {
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
-   list-style: none;
+   list-style: none;      /* quita las viñetas de la lista */
    margin-top: 28px;
 }
 
+/* Cada valor es una píldora roja con texto blanco */
 .valores li {
    background: var(--boton-bar);
    color: var(--bg-others);
@@ -76,6 +80,7 @@ main {
 }
 
 /* ---------- Frase destacada ---------- */
+/* Cuadro negro con texto amarillo y sombra roja */
 .lema {
    margin: 50px 0;
    background: var(--bar);
@@ -91,6 +96,7 @@ main {
 }
 
 /* ---------- Integrantes ---------- */
+/* Título "Integrantes del restaurante" */
 .equipo h2 {
    font-family: var(--font-subtitle);
    font-weight: 900;
@@ -100,6 +106,7 @@ main {
    margin-bottom: 32px;
 }
 
+/* Lista de integrantes: tarjetas en fila que bajan si no entran */
 .integrantes {
    display: flex;
    flex-wrap: wrap;
@@ -108,8 +115,9 @@ main {
    list-style: none;
 }
 
+/* Tarjeta de cada integrante: columna centrada, con borde y sombra */
 .integrante {
-   flex: 1 1 190px;
+   flex: 1 1 190px;        /* ancho base de 190px, puede crecer hasta 260px */
    max-width: 260px;
    display: flex;
    flex-direction: column;
@@ -124,23 +132,26 @@ main {
    transition: all .2s ease;
 }
 
+/* Al pasar el mouse la tarjeta se levanta */
 .integrante:hover {
    transform: translateY(-6px);
    box-shadow: 10px 10px 0 var(--bar);
 }
 
+/* Foto/emoji circular del integrante */
 .avatar {
    display: grid;
    place-items: center;
    width: 84px;
    height: 84px;
-   border-radius: 50%;
+   border-radius: 50%;     /* círculo perfecto */
    background: var(--details);
    border: 3px solid var(--bar);
    box-shadow: 3px 3px 0 var(--bar);
    font-size: 2.4rem;
 }
 
+/* Nombre del integrante */
 .integrante h3 {
    font-family: var(--font-subtitle);
    font-weight: 800;
@@ -148,12 +159,14 @@ main {
    color: var(--boton-bar);
 }
 
+/* Mail y teléfono: se cortan si son largos para no salirse de la tarjeta */
 .integrante a,
 .integrante .tel {
    font-size: .95rem;
    overflow-wrap: anywhere;    /* los mails largos no se salen de la tarjeta */
 }
 
+/* Mail en negrita con línea naranja debajo */
 .integrante a {
    color: var(--bar);
    font-weight: 700;
@@ -162,15 +175,18 @@ main {
    transition: color .3s ease;
 }
 
+/* Al pasar el mouse el mail cambia de color */
 .integrante a:hover {
    color: var(--boton-bar);
 }
 
+/* Teléfono en gris */
 .integrante .tel {
    color: #555;
 }
 
 /* ---------- Celular ---------- */
+/* En pantallas chicas: sombras más finas y las tarjetas ocupan todo el ancho */
 @media (max-width: 600px) {
    main { padding: 30px 0 50px; }
 

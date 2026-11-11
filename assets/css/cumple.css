@@ -1,12 +1,11 @@
 /* ==========================================================
    Página de cumpleaños (mismo lenguaje visual que reserva.css)
    ========================================================== */
+/* Colores propios de esta página (sobrescriben los de estilos.css si tienen el mismo nombre) */
 :root {
-  --ink: #0a0500;
-  --red: #b80000;
-  --orange: #f9a12b;
-  --cream: #ffdc78;
-  --paper: #fff7e4;
+  --ink: #0a0500;        /* negro: textos y bordes */
+  --red: #b80000;        /* rojo: fondos de sección */
+  --orange: #f9a12b;     /* naranja: botones y acentos */
 }
 
 /* Hace que el padding y el borde no agranden los campos */
@@ -16,13 +15,15 @@
   box-sizing: border-box;
 }
 
+/* Fondo crema y tipografía del texto general */
 body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font-text);
 }
 
+/* Los botones, campos y selects usan la misma tipografía que el texto */
 button,
 input,
 select,
@@ -30,10 +31,12 @@ textarea {
   font: inherit;
 }
 
+/* Cursor de manito en los botones */
 button {
   cursor: pointer;
 }
 
+/* Contorno naranja al navegar con teclado (accesibilidad) */
 :focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
@@ -42,80 +45,16 @@ button {
 /* ==========================================================
    Header y footer (igual que en reserva.css)
    ========================================================== */
-header {
-  background: var(--ink);
-  border-bottom: 4px solid var(--ink);
-  padding: 20px 30px;
-  align-items: center;
-}
 
+/* El logo no tiene subrayado */
 header .brand {
   text-decoration: none;
-}
-
-.brand-nombre {
-  margin: 0;
-  color: var(--orange);
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-
-.brand-tagline {
-  margin: 4px 0 0;
-  color: var(--cream);
-  font-size: 13px;
-  font-weight: 600;
-}
-
-#navegacion a {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: var(--red);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.16s, box-shadow 0.16s;
-}
-
-#navegacion a:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 5px 0 var(--ink);
-}
-
-#navegacion a.actual {
-  background: var(--orange);
-  color: var(--ink);
-}
-
-footer {
-  padding: 32px 20px;
-  border-top: 4px solid var(--ink);
-  background: var(--ink);
-  color: var(--cream);
-  text-align: center;
-}
-
-.footer-texto {
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.footer-link {
-  color: var(--orange);
-  font-weight: 700;
 }
 
 /* ==========================================================
    Hero centrado (rojo, ancho completo)
    ========================================================== */
+/* Franja roja de presentación. El padding lateral deja el contenido centrado con un máximo de 1440px */
 .hero {
   padding: 64px max(20px, calc((100% - 1440px) / 2));
   background: var(--red);
@@ -123,6 +62,7 @@ footer {
   text-align: center;
 }
 
+/* Etiqueta pequeña en forma de píldora ("WACHINESAS · CUMPLEAÑOS") */
 .etiqueta {
   display: inline-block;
   margin: 0 0 24px;
@@ -135,6 +75,7 @@ footer {
   letter-spacing: 2px;
 }
 
+/* Título grande del hero con contorno y sombra */
 .hero h1 {
   max-width: 900px;
   margin: 0 auto;
@@ -142,12 +83,14 @@ footer {
   font-size: clamp(2.2rem, 6vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
+  font-family: var(--font-title);
   letter-spacing: -0.04em;
   -webkit-text-stroke: 2px var(--ink);
   paint-order: stroke fill;
   text-shadow: 4px 4px 0 var(--ink);
 }
 
+/* Texto debajo del título */
 .hero-descripcion {
   max-width: 560px;
   margin: 24px auto 0;
@@ -156,6 +99,7 @@ footer {
   line-height: 1.4;
 }
 
+/* Botón principal "Reservar mi cumple" con sombra desplazada */
 .boton-principal {
   display: inline-block;
   margin-top: 32px;
@@ -168,19 +112,22 @@ footer {
   font-weight: 900;
   text-decoration: none;
   box-shadow: 5px 5px 0 var(--ink);
-  transition: transform 0.16s, box-shadow 0.16s;
+  transition: transform 0.16s, box-shadow 0.16s;   /* animación al pasar el mouse */
 }
 
+/* Al pasar el mouse el botón se levanta y la sombra crece */
 .boton-principal:hover {
   transform: translateY(-3px);
   box-shadow: 8px 8px 0 var(--ink);
 }
 
+/* Título de cada sección, en mayúsculas y centrado */
 .titulo-seccion {
   margin: 0 0 40px;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 900;
   text-align: center;
+  font-family: var(--font-subtitle);
   text-transform: uppercase;
   letter-spacing: -0.5px;
 }
@@ -188,12 +135,14 @@ footer {
 /* ==========================================================
    Qué incluye
    ========================================================== */
+/* Secciones con el mismo padding lateral que el hero */
 .incluye,
 .paquetes,
 .reservar {
   padding: 56px max(20px, calc((100% - 1440px) / 2));
 }
 
+/* Lista de beneficios: en una columna por defecto (en tablet y escritorio se cambia más abajo) */
 .beneficios {
   display: grid;
   grid-template-columns: 1fr;
@@ -202,8 +151,9 @@ footer {
   margin: 0 auto;
 }
 
+/* Tarjeta de beneficio: borde, fondo claro y sombra desplazada */
 .beneficio {
-  position: relative;
+  position: relative;     /* permite posicionar el número encima de la tarjeta */
   padding: 32px 24px 24px;
   border: 3px solid var(--ink);
   border-radius: 20px;
@@ -212,21 +162,23 @@ footer {
   text-align: center;
 }
 
+/* Número 1, 2 o 3 que sobresale por arriba de la tarjeta */
 .beneficio-numero {
   position: absolute;
-  top: -18px;
+  top: -18px;             /* sube el número por encima del borde */
   left: 50%;
   display: grid;
-  place-items: center;
+  place-items: center;    /* centra el número dentro de su cuadro */
   width: 36px;
   height: 36px;
-  transform: translateX(-50%);
+  transform: translateX(-50%);   /* lo centra horizontalmente */
   border: 2px solid var(--ink);
   border-radius: 10px;
   background: var(--orange);
   font-weight: 900;
 }
 
+/* Título del beneficio en rojo */
 .beneficio h3 {
   margin: 0 0 12px;
   color: var(--red);
@@ -234,6 +186,7 @@ footer {
   font-weight: 900;
 }
 
+/* Texto del beneficio */
 .beneficio p {
   margin: 0;
   line-height: 1.5;
@@ -242,6 +195,7 @@ footer {
 /* ==========================================================
    Paquetes (opciones seleccionables)
    ========================================================== */
+/* Lista de paquetes: una columna por defecto */
 .paquetes-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -251,6 +205,7 @@ footer {
 }
 
 /* El radio original se oculta, pero el label sigue siendo clickeable */
+/* Cada paquete es un label: al hacer clic en la tarjeta se marca el radio que tiene adentro */
 .paquete {
   position: relative;
   display: flex;
@@ -264,12 +219,14 @@ footer {
   transition: transform 0.16s, box-shadow 0.16s, background 0.16s;
 }
 
+/* Oculta el círculo del radio: el usuario ve la tarjeta, no el botón de radio */
 .paquete input {
   position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0;               /* invisible pero sigue funcionando */
+  pointer-events: none;     /* no recibe clics: los recibe la tarjeta */
 }
 
+/* Al pasar el mouse, el paquete se levanta */
 .paquete:hover {
   transform: translateY(-3px);
   box-shadow: 5px 6px 0 var(--ink);
@@ -277,20 +234,23 @@ footer {
 
 /* Paquete elegido: fondo naranja, usando :has() para no necesitar JavaScript */
 .paquete:has(input:checked) {
-  background: var(--orange);
+  background: var(--details);
   box-shadow: 6px 6px 0 var(--ink);
 }
 
+/* Si el radio tiene el foco del teclado, se marca la tarjeta con borde rojo */
 .paquete:has(input:focus-visible) {
   outline: 3px solid var(--red);
   outline-offset: 3px;
 }
 
+/* Nombre del paquete en grande */
 .paquete-nombre {
   font-size: 20px;
   font-weight: 900;
 }
 
+/* Detalle del paquete en letra más chica */
 .paquete-detalle {
   font-size: 15px;
   font-weight: 500;
@@ -299,11 +259,13 @@ footer {
 /* ==========================================================
    Formulario
    ========================================================== */
+/* Sección del formulario en rojo con línea negra arriba */
 .reservar {
   background: var(--red);
   border-top: 4px solid var(--ink);
 }
 
+/* Tarjeta blanca del formulario, centrada, con sombra desplazada */
 .card-cumple {
   max-width: 900px;
   margin: 0 auto;
@@ -314,14 +276,17 @@ footer {
   box-shadow: 8px 8px 0 var(--ink);
 }
 
+/* Título "Reservá tu cumple" */
 .titulo-form {
   margin: 0;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-family: var(--font-subtitle);
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
 }
 
+/* Subtítulo en rojo debajo del título */
 .subtitulo-form {
   margin: 8px 0 32px;
   color: var(--red);
@@ -330,16 +295,19 @@ footer {
   text-align: center;
 }
 
+/* Campos en una columna por defecto (en tablet se pasan a dos columnas) */
 .grid-campos {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
+/* min-width: 0 evita que un campo ancho se salga de su columna */
 .grupo {
   min-width: 0;
 }
 
+/* Etiqueta de cada campo */
 .grupo label {
   display: block;
   margin-bottom: 8px;
@@ -347,31 +315,36 @@ footer {
   font-weight: 700;
 }
 
+/* Estilo común de inputs, select y textarea */
 .campo {
   display: block;
-  width: 100%;
+  width: 100%;          /* ocupa todo el ancho de la columna */
   padding: 12px 14px;
   border: 2px solid var(--ink);
   border-radius: 12px;
   background: #fffaf0;
   color: var(--ink);
-  outline: none;
+  outline: none;        /* se quita el contorno por defecto, se reemplaza en :focus */
 }
 
+/* Campo con el foco: contorno naranja */
 .campo:focus {
   outline: 3px solid var(--orange);
   outline-offset: 2px;
 }
 
+/* Área de texto con altura mínima de 100px que se puede agrandar a lo alto */
 .campo-area {
   min-height: 100px;
-  resize: vertical;
+  resize: vertical;     /* solo se puede cambiar el alto, no el ancho */
 }
 
+/* Campo que ocupa las dos columnas (por ejemplo, Comentarios) */
 .grupo-ancho {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1;  /* desde la primera línea hasta la última */
 }
 
+/* Botón "Enviar reserva de cumple" a todo el ancho */
 .boton-confirmar {
   width: 100%;
   margin-top: 28px;
@@ -386,11 +359,13 @@ footer {
   transition: transform 0.16s, box-shadow 0.16s;
 }
 
+/* Al pasar el mouse, el botón se levanta */
 .boton-confirmar:hover {
   transform: translateY(-3px);
   box-shadow: 8px 8px 0 var(--ink);
 }
 
+/* Nota de campos obligatorios, en gris y centrada */
 .nota {
   margin: 20px 0 0;
   color: #514033;
@@ -398,6 +373,7 @@ footer {
   text-align: center;
 }
 
+/* Cuadro de aviso: amarillo por defecto (error) */
 .mensaje {
   margin: 20px 0 0;
   padding: 12px 16px;
@@ -407,10 +383,12 @@ footer {
   font-weight: 700;
 }
 
+/* Aviso de éxito: verde */
 .mensaje.exito {
   background: #d9f3d3;
 }
 
+/* Clase que oculta un elemento (la usa el JavaScript) */
 .oculto {
   display: none;
 }
@@ -423,7 +401,7 @@ footer {
 @media (min-width: 640px) {
   .paquetes-grid,
   .beneficios {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);   /* tres columnas de igual ancho */
   }
 
   .grid-campos {
@@ -435,6 +413,7 @@ footer {
   }
 }
 
+/* Escritorio: más espacio lateral en las secciones */
 @media (min-width: 768px) {
   .hero {
     padding: 80px max(36px, calc((100% - 1440px) / 2));

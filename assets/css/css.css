@@ -1,10 +1,14 @@
+/* Archivo no enlazado desde ninguna página del sitio. Se conserva como referencia de la versión anterior. */
+
+/* Fondo y tipografía generales */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #fbf6ee;
-  color: #2a1f18;
+  background-color: #fbf6ee;   /* crema claro */
+  color: #2a1f18;              /* marrón oscuro para el texto */
 }
 
+/* Encabezado rojo con el texto centrado */
 header {
   background-color: #d9531e;
   color: white;
@@ -12,31 +16,37 @@ header {
   padding: 24px 16px;
 }
 
+/* Título del encabezado */
 header h1 {
   margin: 0;
   font-size: 2rem;
 }
 
+/* Subtítulo debajo del título */
 header p {
   margin: 6px 0 0;
 }
 
+/* Contenido centrado, con ancho máximo de 700px */
 main {
   max-width: 700px;
   margin: 0 auto;
   padding: 16px;
 }
 
+/* Separación entre secciones */
 section {
   margin-bottom: 30px;
 }
 
+/* Títulos de sección en naranja con línea debajo */
 h2 {
   color: #d9531e;
   border-bottom: 2px solid #d9531e;
   padding-bottom: 4px;
 }
 
+/* Tarjeta de un plato */
 .plato {
   background-color: white;
   border: 1px solid #e8dccb;
@@ -45,20 +55,24 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Nombre del plato sin margen superior */
 .plato h3 {
   margin: 0 0 4px;
 }
 
+/* Descripción del plato en gris */
 .plato p {
   margin: 0 0 8px;
   color: #7a6a5d;
 }
 
+/* Precio en negrita y un poco más grande */
 .precio {
   font-weight: bold;
   font-size: 1.1rem;
 }
 
+/* Pie de página centrado en gris */
 footer {
   text-align: center;
   padding: 16px;

@@ -1,8 +1,11 @@
+/* Estilos de la página Menú: título, botones de categoría, tarjetas y responsive. */
+/* Fondo amarillo y espacio de la página Menú. */
 main {
    background: var(--bg-others);
    padding: 50px 0 70px;
 }
 
+/* Título Menú con estilo llamativo. */
 #title {
    font-size: clamp(3.5rem, 5vw, 5rem);
    font-family: var(--font-subtitle);
@@ -18,28 +21,33 @@ main {
    overflow-wrap: anywhere;
 }
 
+/* Texto general de la página. */
 .text {
    font-family: var(--font-text);
    font-size: 22px;
 }
 
+/* Contenedor centrado del contenido, con ancho máximo de 1100px. */
 .carta {
    width: min(1100px, 100% - 2rem);
    margin-inline: auto;
    text-align: center;
 }
 
+/* Título dentro de la carta. */
 .carta h1 {
    color: var(--bar);
    font-size: clamp(1.8rem, 4vw, 2.5rem);
    margin-bottom: 20px;
 }
 
+/* Texto dentro de la carta. */
 .carta .text {
    margin-bottom: 20px;
    color: var(--bar);
 }
 
+/* Contenedor de los botones de categoría: en fila, bajan si no entran. */
 #ini {
    display: flex;
    flex-wrap: wrap;
@@ -49,12 +57,14 @@ main {
    position: relative;
 }
 
+/* Efecto de relleno circular al pasar el mouse sobre el botón. */
 .inc::after {
    position: absolute;
    background: var(--boton-bar);
    clip-path: circle(0% at 50% 50%);
 }
 
+/* Al pasar el mouse el botón se llena de rojo y se levanta. */
 .inc:hover {
    background: var(--boton-bar);
    color: var(--bg-others);
@@ -63,6 +73,7 @@ main {
    transform: translateY(-4.5px);
 }
 
+/* Botones de categoría en forma de píldora. */
 .inc {
    cursor: pointer;
    background: #fdeec5;
@@ -77,12 +88,14 @@ main {
    transition: 0.75s;
 }
 
+/* Categoría seleccionada: botón rojo con texto amarillo. */
 .inc.activo {
    background: var(--boton-bar);
    color: var(--bg-others);
    border-color: var(--boton-bar);
 }
 
+/* Línea divisoria debajo del título. */
 #line {
    width: min(1100px, 90%);
    margin: 40px auto;
@@ -91,12 +104,14 @@ main {
    border-radius: 7px;
 }
 
+/* Grilla de tarjetas: tantas columnas como entren de al menos 280px. */
 #grilla {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
    gap: 28px;
 }
 
+/* Tarjeta de un plato. */
 .card {
    background: #fdeec5;
    border: 2px solid var(--bar);
@@ -105,6 +120,7 @@ main {
    box-shadow: 7px 7px 0 var(--bar);
 }
 
+/* Foto del plato con proporción 3:2; sin foto, muestra fondo rayado. */
 .card__img {
    aspect-ratio: 3 / 2;
    border: 2px solid var(--bar);
@@ -114,12 +130,14 @@ main {
    background-position: center;
 }
 
+/* Nombre del plato. */
 .card h3 {
    color: var(--boton-bar);
    margin: 16px 0 8px;
    font-size: 1.3rem;
 }
 
+/* Descripción del plato. */
 .card p {
    font-size: .9rem;
    color: #555;
@@ -127,6 +145,7 @@ main {
    min-height: 2.6em;
 }
 
+/* Precio en negrita. */
 .card .precio {
    display: block;
    margin-top: 12px;
@@ -135,13 +154,17 @@ main {
    color: var(--bar);
 }
 
+/* Al pasar el mouse la tarjeta se levanta. */
 .card:hover {
    box-shadow: 10px 10px 0 var(--bar);
    transform: translateY(-6px);
    transition: all .2s ease;
 }
 
+/* Celulares (hasta 600 px): menos padding y sombra más chica. */
 @media (max-width: 600px) {
+   /* En celular, menos espacio arriba y abajo. */
    main { padding: 30px 0 50px; }
+   /* Sombra más chica en celular. */
    .card { box-shadow: 5px 5px 0 var(--bar); }
 }
