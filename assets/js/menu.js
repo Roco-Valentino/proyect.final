@@ -5,14 +5,14 @@ const platos = [
    { nombre: "Napolitana Simple ", desc: "Jamón, Mozzarella, Orégano y Salsa de Tomate.", precio: 18500, categoria: "Especialidad", img:"../assets/img/especialidad1.jpeg" },
    { nombre: "Cheddar & Panceta", desc: "Cheddar, Panceta, Cebolla Morada y Cebollin de Verdeo.", precio: 19200, categoria: "Especialidad", img: "../assets/img/especialidad2.webp" },
    { nombre: "Milanesa 4 Quesos", desc: "Con queso Mozzarella, Cheddar, Parmesano y Roquefort.", precio: 18900, categoria: "Especialidad", img: "../assets/img/especialidad3.webp" },
-   { nombre: "Milanesa a Caballo", desc: "La mila clásica con 2 Huevos Fritos.", precio: 22100, categoria: "Especialidad", img: "" },
+   { nombre: "Milanesa a Caballo", desc: "La mila clásica con 2 Huevos Fritos.", precio: 22100, categoria: "Especialidad", img: "../assets/img/especialidad4.avif" },
    { nombre: "Milanesa Rocona", desc: "Queso Roquefort con Nuez encima.", precio: 19000, categoria: "Especialidad", img: "" },
    { nombre: "Milanesa Fresca", desc: "Pesto con rodajas de Tomate cherri fresco.", precio: 19000, categoria: "Especialidad", img: "" },
    { nombre: "La BAJON", desc: "Milanesa Napolitana con tiras Panceta y Aceitunas.", precio: 23450, categoria: "Especialidad", img: "../assets/img/mila1.jpeg" },
 
    { nombre: "Milanesa clásica", desc: "De Carne de Ternera.", precio: 17000, categoria: "General", img: "../assets/img/general1.webp" },
    { nombre: "Milanesa Chicken", desc: "De Pechuga de Pollo.", precio: 17500, categoria: "General", img: "../assets/img/general2.webp" },
-   { nombre: "Milanesa Veggie", desc: "De Zapallo o Berengena.", precio: 18000, categoria: "General", img: "../assets/img/general1.jpg" },
+   { nombre: "Milanesa Veggie", desc: "De Zapallo o Berengena.", precio: 18000, categoria: "General", img: "../assets/img/general3.webp" },
    { nombre: "Milanesa clásica", desc: "Sanguche clasico con Lechuga, Tomate y Mayonesa Casera de la casa.", precio: 17000, categoria: "General", img: "../assets/img/general4.webp" },
 
    { nombre: "Flan casero", desc: "Flan Clásico con dulce de leche o crema.", precio: 13500, categoria: "Postres", img: "../assets/img/postre1.webp" },
