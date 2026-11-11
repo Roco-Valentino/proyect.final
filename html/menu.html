@@ -3,11 +3,14 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../assets/css/estilos.css"/>
-   <link rel="stylesheet" href="../assets/css/menu.css"/>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat+Alternates:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+   
+   <link rel="stylesheet" href="../assets/css/menu.css"/>
+   <link rel="stylesheet" href="../assets/css/estilos.css"/>
    <script src="../assets/js/index.js" defer></script>
    <title>Men&#250;</title>
 </head>
@@ -15,8 +18,9 @@
    <script src="../assets/js/menu.js" defer></script>
    <div class="cont">
       <header>
-         <a href="../index.html" id="logo">
+         <a href="../index.html" class="brand">
             <p>WACHINESAS</p>
+            <p class="brand-tagline">Donde tu Wacho paga las milanesas</p>
          </a>
          <button class="hamb"
             id="botonMenu"
@@ -27,7 +31,7 @@
             &#9776;
          </button>
          <nav id="navegacion">
-            <a href="menu.html">Men&#250;</a>
+            <a href="menu.html" class="actual" aria-current="page">Men&#250;</a>
             <a href="reservas.html">Reservas</a>
             <a href="cumple.html">Reserva de Cumplea&ntilde;os</a>
             <a href="pedidos.html">Pedidos a Domicilio</a>
@@ -46,7 +50,7 @@
       </main>
       <footer>
          <div id="conocenos">
-            <a href="us.html" id="us">
+            <a href="quienes-somos.html" id="us">
                <p>Sobre nosotros</p>
             </a>
             <p>Somos estudiantes de 5to año que dejamos todo para poder cumplir nuestro sueño, ser un Restaurante de Milanesas. Queremos que las milanesas hablen por nosotros.</p>
