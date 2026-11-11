@@ -491,31 +491,6 @@ header .brand {
 }
 
 /* ==========================================================
-   Footer
-   ========================================================== */
-/* Pie de página negro con borde arriba */
-footer {
-  padding: 32px 20px;
-  border-top: 4px solid var(--ink);
-  background: var(--ink);
-  color: var(--cream);
-  text-align: center;
-}
-
-/* Texto del pie */
-.footer-texto {
-  margin: 0 0 8px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* Link del pie en naranja */
-.footer-link {
-  color: var(--orange);
-  font-weight: 700;
-}
-
-/* ==========================================================
    Responsive
    ========================================================== */
 

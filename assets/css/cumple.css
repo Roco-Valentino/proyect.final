@@ -1,6 +1,3 @@
-/* ==========================================================
-   Página de cumpleaños (mismo lenguaje visual que reserva.css)
-   ========================================================== */
 /* Colores propios de esta página (sobrescriben los de estilos.css si tienen el mismo nombre) */
 :root {
   --ink: #0a0500;        /* negro: textos y bordes */
